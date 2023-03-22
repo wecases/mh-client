@@ -23,6 +23,7 @@ specifiers:
   '@vue/tsconfig': ^0.1.3
   '@vueuse/core': ^9.13.0
   pinia: ^2.0.33
+  sass: ^1.59.3
   typescript: ^4.9.4
   unplugin-auto-import: ^0.15.1
   unplugin-vue-components: ^0.24.1
@@ -59,10 +60,11 @@ devDependencies:
   '@vue/tsconfig': 0.1.3
   '@vueuse/core': 9.13.0_vue@3.2.47
   pinia: 2.0.33_hmuptsblhheur2tugfgucj7gc4
+  sass: 1.59.3
   typescript: 4.9.5
   unplugin-auto-import: 0.15.1_@vueuse+core@9.13.0
   unplugin-vue-components: 0.24.1_vue@3.2.47
-  vite: 4.0.4
+  vite: 4.0.4_sass@1.59.3
   vite-plugin-use-modules: 1.3.1_vue@3.2.47
   vue-tsc: 1.2.0_typescript@4.9.5
 
@@ -1740,7 +1742,7 @@ packages:
       magic-string: 0.27.0
       picocolors: 1.0.0
       terser: 5.16.6
-      vite: 4.0.4
+      vite: 4.0.4_sass@1.59.3
     transitivePeerDependencies:
       - postcss
       - supports-color
@@ -2528,7 +2530,7 @@ packages:
       regenerator-runtime: 0.13.11
       systemjs: 6.14.1
       terser: 5.16.6
-      vite: 4.0.4
+      vite: 4.0.4_sass@1.59.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2543,7 +2545,7 @@ packages:
       '@babel/core': 7.21.3
       '@babel/plugin-transform-typescript': 7.21.3_@babel+core@7.21.3
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.21.3
-      vite: 4.0.4
+      vite: 4.0.4_sass@1.59.3
       vue: 3.2.47
     transitivePeerDependencies:
       - supports-color
@@ -2556,7 +2558,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.0.4
+      vite: 4.0.4_sass@1.59.3
       vue: 3.2.47
 
   /@volar/language-core/1.3.0-alpha.0:
@@ -3399,6 +3401,9 @@ packages:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
     dev: false
 
+  /immutable/4.3.0:
+    resolution: {integrity: sha512-0AOCmOip+xgJwEVTQj1EfiDDOkPmuyllDuTuEX+DDXUgapLAsBIfkg3sxCYyCEA8mQqZrrxPUGjcOQ2JS3WLkg==}
+
   /inherits/2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
     dev: true
@@ -4065,6 +4070,15 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
+  /sass/1.59.3:
+    resolution: {integrity: sha512-QCq98N3hX1jfTCoUAsF3eyGuXLsY7BCnCEg9qAact94Yc21npG2/mVOqoDvE0fCbWDqiM4WlcJQla0gWG2YlxQ==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.0
+      source-map-js: 1.0.2
+
   /sax/1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
     dev: false
@@ -4404,7 +4418,7 @@ packages:
       vue: 3.2.47
     dev: true
 
-  /vite/4.0.4:
+  /vite/4.0.4_sass@1.59.3:
     resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4433,6 +4447,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.20.0
+      sass: 1.59.3
     optionalDependencies:
       fsevents: 2.3.2
 

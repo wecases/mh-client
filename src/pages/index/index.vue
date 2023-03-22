@@ -4,9 +4,9 @@
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
-    <div>pos: {{x}}, {{y}}</div>
+    <div>pos: {{ x }}, {{ y }}</div>
     <hello-word></hello-word>
-    <swiper  class="swiper-container" :autoplay="true"></swiper>
+    <swiper class="swiper-container" :autoplay="true"></swiper>
   </view>
 </template>
 
@@ -22,7 +22,7 @@ console.log(user.user.name);
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 .content {
   display: flex;
   flex-direction: column;
@@ -47,5 +47,9 @@ console.log(user.user.name);
 .title {
   font-size: 36rpx;
   color: #8f8f94;
+
+  &:hover {
+    color: #ff5777;
+  }
 }
 </style>

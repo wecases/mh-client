@@ -9,7 +9,12 @@ export default defineConfig({
   plugins: [
     Uni({
       vueOptions: {
-        reactivityTransform: true
+        reactivityTransform: true,
+        template: {
+          compilerOptions: {
+            isCustomElement: (tag) => tag.includes(' ')
+          }
+        }
       }
     }),
 

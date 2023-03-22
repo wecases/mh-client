@@ -19,11 +19,13 @@ specifiers:
   '@dcloudio/uni-quickapp-webview': 3.0.0-alpha-3070720230316001
   '@dcloudio/uni-stacktracey': 3.0.0-alpha-3070720230316001
   '@dcloudio/vite-plugin-uni': 3.0.0-alpha-3070720230316001
+  '@uni-helper/uni-app-types': ^0.5.3
   '@vue/tsconfig': ^0.1.3
   '@vueuse/core': ^9.13.0
   pinia: ^2.0.33
   typescript: ^4.9.4
   unplugin-auto-import: ^0.15.1
+  unplugin-vue-components: ^0.24.1
   vite: 4.0.4
   vite-plugin-use-modules: ^1.3.1
   vue: ^3.2.45
@@ -53,11 +55,13 @@ devDependencies:
   '@dcloudio/uni-cli-shared': 3.0.0-alpha-3070720230316001_vue@3.2.47
   '@dcloudio/uni-stacktracey': 3.0.0-alpha-3070720230316001
   '@dcloudio/vite-plugin-uni': 3.0.0-alpha-3070720230316001_vite@4.0.4+vue@3.2.47
+  '@uni-helper/uni-app-types': 0.5.3_typescript@4.9.5
   '@vue/tsconfig': 0.1.3
   '@vueuse/core': 9.13.0_vue@3.2.47
   pinia: 2.0.33_hmuptsblhheur2tugfgucj7gc4
   typescript: 4.9.5
   unplugin-auto-import: 0.15.1_@vueuse+core@9.13.0
+  unplugin-vue-components: 0.24.1_vue@3.2.47
   vite: 4.0.4
   vite-plugin-use-modules: 1.3.1_vue@3.2.47
   vue-tsc: 1.2.0_typescript@4.9.5
@@ -2498,6 +2502,17 @@ packages:
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
     dev: true
 
+  /@uni-helper/uni-app-types/0.5.3_typescript@4.9.5:
+    resolution: {integrity: sha512-bx0MyIMRDSaOsO9c52atyNlHsWwHyCyg811uGT7A/dI8fjQj+SPw7Xh94r3Pu2qOD19ev6QRklq5gl3kd5Hlsg==}
+    engines: {node: '>=14.18'}
+    peerDependencies:
+      typescript: ^4.8.0
+    dependencies:
+      '@dcloudio/types': 3.3.2
+      typescript: 4.9.5
+      vue3: /vue/3.2.47
+    dev: true
+
   /@vitejs/plugin-legacy/4.0.2_terser@5.16.6+vite@4.0.4:
     resolution: {integrity: sha512-ivnt9sCkgwJTYTWLjuvY6H/HTuiQC1EgzAPkiAvi0yNAssiqOJjyjhG3hAK5LFUUorE0w9kGxn8K0f/74DlbxQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -4307,6 +4322,35 @@ packages:
       unplugin: 1.3.1
     transitivePeerDependencies:
       - rollup
+    dev: true
+
+  /unplugin-vue-components/0.24.1_vue@3.2.47:
+    resolution: {integrity: sha512-T3A8HkZoIE1Cja95xNqolwza0yD5IVlgZZ1PVAGvVCx8xthmjsv38xWRCtHtwl+rvZyL9uif42SRkDGw9aCfMA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/parser': ^7.15.8
+      '@nuxt/kit': ^3.2.2
+      vue: 2 || 3
+    peerDependenciesMeta:
+      '@babel/parser':
+        optional: true
+      '@nuxt/kit':
+        optional: true
+    dependencies:
+      '@antfu/utils': 0.7.2
+      '@rollup/pluginutils': 5.0.2
+      chokidar: 3.5.3
+      debug: 4.3.4
+      fast-glob: 3.2.12
+      local-pkg: 0.4.3
+      magic-string: 0.30.0
+      minimatch: 7.4.2
+      resolve: 1.22.1
+      unplugin: 1.3.1
+      vue: 3.2.47
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
     dev: true
 
   /unplugin/1.3.1:

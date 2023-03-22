@@ -5,6 +5,8 @@
       <text class="title">{{ title }}</text>
     </view>
     <div>pos: {{x}}, {{y}}</div>
+    <hello-word></hello-word>
+    <swiper  class="swiper-container" :autoplay="true"></swiper>
   </view>
 </template>
 

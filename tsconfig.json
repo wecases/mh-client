@@ -14,8 +14,12 @@
     ],
     "types": [
       "@dcloudio/types",
-      "vite-plugin-use-modules/client"
+      "vite-plugin-use-modules/client",
+      "@uni-helper/uni-app-types"
     ]
+  },
+  "vueCompilerOptions": {
+    "nativeTags": ["block", "component", "template", "slot"]
   },
   "include": [
     "src/**/*.ts",

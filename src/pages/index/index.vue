@@ -7,10 +7,13 @@
     <div>pos: {{ x }}, {{ y }}</div>
     <hello-word></hello-word>
     <swiper class="swiper-container" :autoplay="true"></swiper>
+    <van-button type="primary">主要按钮</van-button>
   </view>
 </template>
 
 <script setup lang="ts">
+import { showToast } from 'vant';
+
 const title = $ref('Hello')
 console.log(title)
 
@@ -19,6 +22,8 @@ const { x, y } = useMouse()
 let user = userStore()
 
 console.log(user.user.name);
+
+showToast('提示内容');
 
 </script>
 

@@ -13,7 +13,8 @@
       "dom"
     ],
     "types": [
-      "@dcloudio/types"
+      "@dcloudio/types",
+      "vite-plugin-use-modules/client"
     ]
   },
   "include": [

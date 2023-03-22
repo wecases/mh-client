@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
 import AutoImport from 'unplugin-auto-import/vite'
+import Modules from 'vite-plugin-use-modules'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,8 +16,15 @@ export default defineConfig({
       imports: [
         'vue',
         'vue/macros',
-        '@vueuse/core'
+        '@vueuse/core',
+        'pinia',
       ],
+      dirs: [
+        'src/stores',
+      ]
+    }),
+    Modules({
+      target: 'src/plugins'
     }),
   ],
 });

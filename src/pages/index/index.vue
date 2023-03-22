@@ -13,6 +13,11 @@ const title = $ref('Hello')
 console.log(title)
 
 const { x, y } = useMouse()
+
+let user = userStore()
+
+console.log(user.user.name);
+
 </script>
 
 <style>

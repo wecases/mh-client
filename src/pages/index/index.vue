@@ -4,12 +4,15 @@
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
+    <div>pos: {{x}}, {{y}}</div>
   </view>
 </template>
 
 <script setup lang="ts">
 const title = $ref('Hello')
 console.log(title)
+
+const { x, y } = useMouse()
 </script>
 
 <style>

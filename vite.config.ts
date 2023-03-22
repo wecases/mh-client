@@ -15,6 +15,7 @@ export default defineConfig({
       imports: [
         'vue',
         'vue/macros',
+        '@vueuse/core'
       ],
     }),
   ],

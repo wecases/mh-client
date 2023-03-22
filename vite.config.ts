@@ -30,7 +30,9 @@ export default defineConfig({
       ],
       dirs: [
         'src/stores',
-      ]
+        'src/utils',
+      ],
+      defaultExportByFilename: true
     }),
 
     // https://github.com/dishait/vite-plugin-use-modules
@@ -41,7 +43,7 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: 'runtime/components.d.ts',
-      dirs:['src/components'],
+      dirs: ['src/components'],
       directoryAsNamespace: true,
       resolvers: [VantResolver()],
     }),

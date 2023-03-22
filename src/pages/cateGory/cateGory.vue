@@ -23,7 +23,7 @@
 			</view>
 		</view>
 		<!-- 商品列表 -->
-		<blindList />
+		<blind-list />
 	</view>
 </template>
 

@@ -63,14 +63,14 @@
 				<view class="title">我的服务</view>
 			</view>
 			<van-grid col="4" :border="false">
-					<van-grid-item class="grid_item t-c" v-for="(nav, index) in vipCenterNav" :key="index"
+				<van-grid-item class="grid_item t-c" v-for="(nav, index) in vipCenterNav" :key="index"
 					@click="navto(nav.jump)">
-						<image :src="'../../static/img/' + nav.icon" />
-						<view class="text">{{nav.text}}</view>
-						<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
+					<image :src="'../../static/img/' + nav.icon" />
+					<view class="text">{{ nav.text }}</view>
+					<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
 							:value="nav.value"></u-badge> -->
-					</van-grid-item>
-				</van-grid>
+				</van-grid-item>
+			</van-grid>
 		</view>
 
 	</view>
@@ -142,11 +142,12 @@ let vipCenterNav = reactive([
 		jump: "pages/debrisExchange/debrisExchange"
 	}
 ])
-function navto(jump){
+function navto(jump) {
 	uni.navigateTo({
-			url: jump,
+		url: jump,
 
-})}
+	})
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,6 @@
 <template>
 	<view class="incomeDetail">
-		<Navbar text="收益明细">
-		</Navbar>
+		<navbar text="收益明细" />
 		<view class="content">
 			<view class="item">
 				<view class="left">
@@ -34,37 +33,42 @@
 </script>
 
 <style lang="scss" scoped>
-	page{
-		background-color: #f1f1f1;
-	}
-	.incomeDetail {
-		.content {
-			padding:0.75rem;
-			.item{
+page {
+	background-color: #f1f1f1;
+}
+
+.incomeDetail {
+	.content {
+		padding: 0.75rem;
+
+		.item {
+			display: flex;
+			justify-content: space-between;
+			padding-top: 0.5rem;
+
+			.left {
+				.name {
+					color: #333333ff;
+					font-size: 0.9rem;
+					font-weight: 400;
+				}
+
+				.time {
+					color: #666666ff;
+					font-size: 0.69rem;
+					font-weight: 400;
+					padding-top: 0.25rem;
+				}
+			}
+
+			.right {
 				display: flex;
-				justify-content: space-between;
-				padding-top: 0.5rem;
-				.left{
-					.name{
-						 color: #333333ff;
-						 font-size: 0.9rem;
-						 font-weight: 400;
-					}
-					.time{
-						 color: #666666ff;
-						 font-size: 0.69rem;
-						 font-weight: 400;
-						 padding-top: 0.25rem                          ;
-					}
-				}
-				.right{
-					display: flex;
-					align-items: center;
-					 color: #333333ff;
-					 font-size: 0.9rem;
-					 font-weight: 400;
-				}
+				align-items: center;
+				color: #333333ff;
+				font-size: 0.9rem;
+				font-weight: 400;
 			}
 		}
 	}
+}
 </style>

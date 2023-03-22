@@ -2,7 +2,7 @@
 	<view class="retirementBookService">
 		<!-- <u-navbar title="我的订单" @rightClick="rightClick" :autoBack="true"></u-navbar> -->
 
-		<Navbar :text="我的订单"></Navbar>
+		<navbar :text="我的订单"></navbar>
 		<view class="BookService">
 			<van-tabs v-model:active="active">
 				<van-tab v-for="item, index in shopNav" :key="index" :title="item.name"></van-tab>

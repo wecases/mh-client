@@ -48,8 +48,8 @@
 
 				</view>
 				<!-- <shopList></shopList> -->
-				<CardList></CardList>
-				<ShopList></ShopList>
+				<card-list></card-list>
+				<shop-list></shop-list>
 			</view>
 		</view>
 	</view>
@@ -71,11 +71,6 @@ page {
 
 .index {
 	margin-top: 30rpx;
-
-	.container {
-		// display: flex;
-	}
-
 
 	.top {
 		background: #ffffffff;

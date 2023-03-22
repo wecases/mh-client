@@ -3,6 +3,7 @@
         "deps",
         "develop",
         "components",
-        "page"
+        "page",
+        "work"
     ]
 }

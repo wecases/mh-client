@@ -1,7 +1,6 @@
 <template>
 	<view class="set">
-		<Navbar :text="出售碎片">
-		</Navbar>
+		<navbar :text="出售碎片" />
 		<view class="content">
 			<view class="user">
 				<view class="row">
@@ -33,11 +32,11 @@
 			</view>
 
 			<view class="user">
-				<view class="row" v-for="(item,index) in row" :key="index">
-					<view class="left">{{item.text}}</view>
+				<view class="row" v-for="(item, index) in row" :key="index">
+					<view class="left">{{ item.text }}</view>
 					<view class="right">
 						<view v-if="item.right">
-						{{item.right}}
+							{{ item.right }}
 						</view>
 						<svg xmlns="http://www.w3.org/2000/svg" class="do97pvxlj__icon do97pvxlj__design-iconfont"
 							viewBox="0 0 1024 1024">
@@ -55,82 +54,83 @@
 </template>
 
 <script setup>
-	import {
-		ref,
-		reactive,
-	} from "vue";
-	const row = reactive([{
-			text: "消息提示",
-			right: ""
-		},{
-			text: "清除缓存",
-			right: "12.35MB"
-		},{
-			text: "关于我们",
-			right: ""
-		},{
-			text: "版本号",
-			right: "1.1.0"
-		}
-	])
+import {
+	ref,
+	reactive,
+} from "vue";
+const row = reactive([{
+	text: "消息提示",
+	right: ""
+}, {
+	text: "清除缓存",
+	right: "12.35MB"
+}, {
+	text: "关于我们",
+	right: ""
+}, {
+	text: "版本号",
+	right: "1.1.0"
+}
+])
 </script>
 
 <style lang="scss">
-	.content {
-		padding-top: 44px;
+.content {
+	padding-top: 44px;
 
-		.user {
-			margin-top: 1rem;
-			border-radius: 0.63rem;
-			opacity: 1;
-			background: #ffffffff;
-			padding: 0.75rem;
-			padding-bottom: 0rem;
+	.user {
+		margin-top: 1rem;
+		border-radius: 0.63rem;
+		opacity: 1;
+		background: #ffffffff;
+		padding: 0.75rem;
+		padding-bottom: 0rem;
 
-			.row {
-				padding-bottom: 1rem;
+		.row {
+			padding-bottom: 1rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.left {
+				color: #333333ff;
+				font-size: 0.88rem;
+				font-weight: 400;
+			}
+
+			.right {
+				color: #666666ff;
+				font-size: 0.81rem;
+				font-weight: 400;
 				display: flex;
-				justify-content: space-between;
 				align-items: center;
 
-				.left {
-					color: #333333ff;
-					font-size: 0.88rem;
-					font-weight: 400;
+				svg {
+					margin-left: 0.5rem;
+					width: 0.8rem;
+					height: 0.82rem;
 				}
-
-				.right {
-					color: #666666ff;
-				 font-size: 0.81rem;
-					font-weight: 400;
-					display: flex;
-					align-items: center;
-
-					svg {
-						margin-left: 0.5rem;
-						width: 0.8rem;
-						height: 0.82rem;
-					}
-				}
-			}
-
-			image {
-				width: 1.88rem;
-				height: 1.88rem;
-				border-radius: 0.94rem;
 			}
 		}
-		.logOut{
-			margin-top:0.75rem;
-			padding: 0.6rem;
-			text-align: center;
-			border-radius: 1.88rem;
-			opacity: 1;
-			background: #ffffffff;
-			 color: #333333ff;
- font-size: 1.06rem;
- font-weight: 400;
- font-family: "Source Han Sans CN";
+
+		image {
+			width: 1.88rem;
+			height: 1.88rem;
+			border-radius: 0.94rem;
 		}
 	}
+
+	.logOut {
+		margin-top: 0.75rem;
+		padding: 0.6rem;
+		text-align: center;
+		border-radius: 1.88rem;
+		opacity: 1;
+		background: #ffffffff;
+		color: #333333ff;
+		font-size: 1.06rem;
+		font-weight: 400;
+		font-family: "Source Han Sans CN";
+	}
+}
 </style>

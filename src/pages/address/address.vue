@@ -6,7 +6,7 @@
 		    :autoBack="true"
 		>
 		</u-navbar> -->
-		<Navbar :text="我的地址"></Navbar>
+		<navbar :text="我的地址"></navbar>
 		<view class="content">
 			<view class="addressBox" v-for="item, index in 4" :key="index">
 				<view class="top">

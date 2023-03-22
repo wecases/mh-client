@@ -1,8 +1,8 @@
 <template>
 	<view class="hot">
-		<Navbar text="热卖专区"></Navbar>
+		<navbar text="热卖专区"></navbar>
 		<view class="content">
-			<cardList/>
+			<card-list />
 		</view>
 	</view>
 </template>
@@ -11,11 +11,12 @@
 </script>
 
 <style lang="scss" scoped>
-page{
+page {
 	background-color: #f1f1f1;
 }
-.hot{
-	.content{
+
+.hot {
+	.content {
 		padding-top: 1rem;
 	}
 }

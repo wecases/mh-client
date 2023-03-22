@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "deps",
         "develop",
-        "components"
+        "components",
+        "page"
     ]
 }

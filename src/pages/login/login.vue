@@ -57,7 +57,7 @@ page {
 .login {
 
 	.bg {
-		background-image: url("@/static/img/login/Vector.png");
+		// background-image: url("../../static/img/login/Vector.png");
 		background-size: cover;
 		width: 18.25rem;
 		height: 9.31rem;

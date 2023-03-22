@@ -1,0 +1,33 @@
+{
+	"name": "Vue3",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"MS-CEINTL.vscode-language-pack-zh-hans",
+				"usernamehw.errorlens",
+				"AMiner.codegeex",
+				"vivaxy.vscode-conventional-commits",
+				"EditorConfig.EditorConfig",
+				"IronGeek.vscode-env",
+				"GitHub.vscode-pull-request-github",
+				"eamodio.gitlens",
+				"Vue.vscode-typescript-vue-plugin",
+				"Vue.volar"
+			]
+		}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "root"
+}

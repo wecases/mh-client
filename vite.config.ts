@@ -4,6 +4,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Modules from 'vite-plugin-use-modules'
 import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers';
+import UnoCSS from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -47,5 +48,8 @@ export default defineConfig({
       directoryAsNamespace: true,
       resolvers: [VantResolver()],
     }),
+
+    // https://github.com/unocss/unocss
+    UnoCSS(),
   ],
 });

@@ -1,9 +1,5 @@
 <template>
 	<view class="center">
-		<view class="bg">
-			<!-- <image src="@/static/img/center/mineBg.png"  mode=""></image> -->
-
-		</view>
 		<!-- 用户信息 -->
 		<view class="info">
 			<view class="avatar"></view>
@@ -17,7 +13,7 @@
 		<!-- 我的订单 -->
 		<view class="grid_box">
 			<view class="userInfo flex">
-				<view class="infoItem" @click="$u.route('/pages/myWallet/myWallet')">
+				<view class="infoItem" @click="Jump({ url: '/pages/myWallet/myWallet' })">
 					<view class="infoTop">￥110.00</view>
 					<view class="infoBottom">账户余额</view>
 				</view>
@@ -50,8 +46,8 @@
 						<!-- <image :src="$Common.img(nav.icon)" mode=""></image> -->
 						<image :src="'../../static/img/' + nav.icon" />
 						<view class="text">{{ nav.text }}</view>
-						<u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
-							:value="nav.value"></u-badge>
+						<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
+							:value="nav.value"></u-badge> -->
 					</van-grid-item>
 				</van-grid>
 			</navigator>
@@ -59,12 +55,12 @@
 		</view>
 		<!-- 会员中心 -->
 		<view class="grid_box">
-			<view class="top flex f-y-c f-x-b">
+			<view class="top">
 				<view class="title">我的服务</view>
 			</view>
 			<van-grid col="4" :border="false">
 				<van-grid-item class="grid_item t-c" v-for="(nav, index) in vipCenterNav" :key="index"
-					@click="navto(nav.jump)">
+					@click="Jump({ url: nav.jump })">
 					<image :src="'../../static/img/' + nav.icon" />
 					<view class="text">{{ nav.text }}</view>
 					<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
@@ -72,11 +68,12 @@
 				</van-grid-item>
 			</van-grid>
 		</view>
-
 	</view>
 </template>
 
 <script setup>
+import { Jump } from "@/utils/common";
+
 // 我的订单
 let myOrderNav = reactive([{
 	text: "待发货",
@@ -106,40 +103,40 @@ let vipCenterNav = reactive([
 	{
 		text: "钱包",
 		icon: "center/s1.svg",
-		jump: "pages/myWallet/myWallet"
+		jump: "/pages/myWallet/myWallet"
 	},
 	{
 		text: "推荐好友",
-		icon: "center/s2.svg",
+		icon: "/center/s2.svg",
 	},
 	{
 		text: "我的地址",
 		icon: "center/s3.svg",
-		jump: "pages/address/address"
+		jump: "/pages/address/address"
 	},
 	{
 		text: "意见反馈",
 		icon: "center/s4.svg",
-		jump: "pages/feedback/feedback"
+		jump: "/pages/feedback/feedback"
 	},
 	{
 		text: "我的仓库",
 		icon: "center/s5.svg",
-		jump: "pages/myHouse/myHouse"
+		jump: "/pages/myHouse/myHouse"
 	},
 	{
 		text: "在线客服",
-		icon: "center/s6.svg",
+		icon: "/center/s6.svg",
 	},
 	{
 		text: "设置",
 		icon: "center/s7.svg",
-		jump: 'pages/set/set'
+		jump: '/pages/set/set'
 
 	}, {
 		text: "碎片交易",
 		icon: "center/s8.svg",
-		jump: "pages/debrisExchange/debrisExchange"
+		jump: "/pages/debrisExchange/debrisExchange"
 	}
 ])
 function navto(jump) {
@@ -159,33 +156,14 @@ page {
 .center {
 	// padding-top: 50rpx;
 	background-image: url("@/static/img/center/mineBg.png");
-	width: 23.44rem;
 	height: 11.88rem;
 	background-repeat: no-repeat;
-	background-position: center;
-
-	.bg {
-		position: absolute;
-		left: 0;
-		z-index: 0;
-		width: 23.44rem;
-		height: 11.88rem;
-		top: 0;
-	}
-
-	.set {
-		padding-right: 20rpx;
-		margin-bottom: 20rpx;
-
-		image {
-			width: 50rpx;
-			height: 50rpx;
-		}
-	}
+	background-size: cover;
 
 	.info {
 		padding-bottom: 2.31rem;
 		padding-top: 3.5rem;
+		padding-left: 1rem;
 		display: flex;
 		align-items: center;
 

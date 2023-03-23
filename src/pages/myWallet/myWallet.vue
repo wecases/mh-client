@@ -1,11 +1,7 @@
 <template>
 	<view class="myWallet">
-		<!-- <navbar
-		    :text="我的钱包"
-		>
-		</navbar> -->
+		<navbar-plus text="我的钱包"></navbar-plus>
 		<view class="topBg">
-
 			<view class="info">
 				<view class="total">账户余额</view>
 				<view class="totalNum">
@@ -30,7 +26,8 @@
 			<view class="top">余额充值</view>
 			<view class="recharge ">
 				<template v-for="(item, index) in payMoney" :key="index">
-					<view @click="actMoney = index + 1" :class="{ payBut: actMoney != index + 1, act: actMoney == index + 1 }">{{ item }}
+					<view @click="actMoney = index + 1"
+						:class="{ payBut: actMoney != index + 1, act: actMoney == index + 1 }">{{ item }}
 					</view>
 				</template>
 			</view>
@@ -62,14 +59,41 @@ let nav = ref([
 // 充值金额
 let payMoney = ref([100, 200, 300, 400, 600, 800])
 let actMoney = ref(1)
+
+// 返回
+function onClickLeft() {
+	uni.navigateBack()
+}
 </script>
 
+<style>
+/deep/.van-nav-bar__content {
+	background-color: transparent !important;
+	border: none;
+}
+
+/deep/.van-nav-bar {
+	background-color: transparent !important;
+	border: none;
+
+}
+</style>
 <style lang="scss" scoped>
 page {
 	padding: 0;
 	margin: 0;
 	height: 100vh;
 	background-color: #ffffffff;
+}
+
+.nav {
+	position: absolute;
+
+	.nav_titile {
+		color: #ffffffff;
+		font-size: 1.06rem;
+		font-weight: 500;
+	}
 }
 
 .myWallet {

@@ -1,12 +1,6 @@
 <template>
 	<view class="address">
-		<!-- <u-navbar
-		    title="我的地址"
-		    @rightClick="rightClick"
-		    :autoBack="true"
-		>
-		</u-navbar> -->
-		<navbar :text="我的地址"></navbar>
+		<navbar text="我的地址"></navbar>
 		<view class="content">
 			<view class="addressBox" v-for="item, index in 4" :key="index">
 				<view class="top">
@@ -41,7 +35,7 @@
 				</view>
 			</view>
 		</view>
-		<but :text="新增地址"></but>
+		<but text="新增地址" @click=""></but>
 	</view>
 </template>
 

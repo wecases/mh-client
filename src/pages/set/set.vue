@@ -1,6 +1,6 @@
 <template>
 	<view class="set">
-		<navbar :text="出售碎片" />
+		<navbar text="设置" />
 		<view class="content">
 			<view class="user">
 				<view class="row">
@@ -17,7 +17,7 @@
 				</view>
 				<view class="row">
 					<view class="left">手机号码</view>
-					<view class="right flex">
+					<view class="right">
 						<view class="">
 							188345325900
 						</view>
@@ -104,7 +104,6 @@ const row = reactive([{
 				font-weight: 400;
 				display: flex;
 				align-items: center;
-
 				svg {
 					margin-left: 0.5rem;
 					width: 0.8rem;

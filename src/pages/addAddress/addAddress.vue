@@ -1,6 +1,6 @@
 <template>
 	<view class="add">
-		<navbar :text="添加收货地址"></navbar>
+		<navbar text="添加收货地址"></navbar>
 		<view class="content">
 			<!-- 收货地址信息 -->
 			<view class="addressInfo">

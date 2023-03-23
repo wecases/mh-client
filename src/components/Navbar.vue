@@ -1,11 +1,10 @@
 <template>
 	<view>
-		<van-nav-bar :title="title" left-arrow>
+		<van-nav-bar :title="text" :border="false" left-arrow @click-left="onClickLeft">
 			<template #left>
-				<van-icon name="arrow-left" size="18" color="#000" />
+				<van-icon name="arrow-left" size="20" color="#000" />
 			</template>
 		</van-nav-bar>
-		{{ title }}
 	</view>
 </template>
 <script setup>
@@ -15,5 +14,8 @@ let props = defineProps({
 		default: ""
 	},
 })
-console.log(props)
+function onClickLeft() {
+	// 返回上一层页面
+	uni.navigateBack()
+}
 </script>

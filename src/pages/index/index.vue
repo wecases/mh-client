@@ -1,5 +1,6 @@
 <template>
 	<view class="index">
+		<view class="i-icon-icon2 text-lg"></view>
 		<view class="container">
 			<view class="top">
 				<view class="header">

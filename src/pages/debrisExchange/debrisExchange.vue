@@ -1,14 +1,6 @@
 <template>
 	<view class="debris">
-		<!-- <u-navbar title="碎片交易" :safeAreaInsetTop="false" @rightClick="rightClick" :autoBack="true">
-			<template #right>
-				<view class="u-nav-slot">
-					<u-icon name="search" size="22"></u-icon>
-				</view>
-			</template>
-
-		</u-navbar> -->
-		<navbar :text="碎片交易"></navbar>
+		<navbar text="碎片交易"></navbar>
 		<view class="exchange">
 			<card-list :type="1" />
 		</view>

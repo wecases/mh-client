@@ -52,7 +52,6 @@ console.log(props.type);
 
 <style lang="scss" scoped>
 .cardList {
-	padding: 0 0.75rem;
 	display: flex;
 	justify-content: space-between;
 }

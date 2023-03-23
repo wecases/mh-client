@@ -1,6 +1,5 @@
 <template>
 	<view class="shopList">
-		<znx-waterFall :value="list">
 			<template v-slot:left="{ leftList }">
 				<view class="shop_item left" v-for="(shop, index) in leftList" :key="index">
 					<view class="cover"></view>
@@ -27,7 +26,6 @@
 					<view class="orginPrice" v-if="shop.orginPrice">￥{{shop.orginPrice}} 原价</view>
 				</view>
 			</template> -->
-		</znx-waterFall>
 		<!-- 暂无更多商品 -->
 		<view class="noMore">没有更多商品啦~</view>
 	</view>

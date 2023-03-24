@@ -10,6 +10,7 @@ import presetIcons from '@unocss/preset-icons'
 import  "./bin/convert";
 
 export default defineConfig({
+    include:[/\.ts$/,/\.vue$/],
     presets: [
         // https://github.com/unocss-applet/unocss-applet
         presetApplet(),

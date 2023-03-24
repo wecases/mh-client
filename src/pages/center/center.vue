@@ -42,13 +42,14 @@
 					</view>
 				</view>
 				<van-grid :border="false" col="4">
-					<van-grid-item class="grid_item" v-for="(nav, index) in myOrderNav" :key="index">
-						<!-- <image :src="$Common.img(nav.icon)" mode=""></image> -->
-						<image :src="'../../static/img/' + nav.icon" />
-						<view class="text">{{ nav.text }}</view>
-						<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
+					<template v-for="nav in myOrderNav">
+						<van-grid-item class="grid_item">
+							<view :class="nav.icon" text-2xl></view>
+							<view class="text">{{ nav.text }}</view>
+							<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
 							:value="nav.value"></u-badge> -->
-					</van-grid-item>
+						</van-grid-item>
+					</template>
 				</van-grid>
 			</navigator>
 
@@ -59,13 +60,14 @@
 				<view class="title">我的服务</view>
 			</view>
 			<van-grid col="4" :border="false">
-				<van-grid-item class="grid_item t-c" v-for="(nav, index) in vipCenterNav" :key="index"
-					@click="Jump({ url: nav.jump })">
-					<image :src="'../../static/img/' + nav.icon" />
-					<view class="text">{{ nav.text }}</view>
-					<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
+				<template v-for="nav in vipCenterNav">
+					<van-grid-item class="grid_item flex items-center justify-center" @click="Jump({ url: nav.jump })">
+						<view :class="nav.icon" :style="{ color: nav.color }" text-3xl></view>
+						<view class="text">{{ nav.text }}</view>
+						<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
 							:value="nav.value"></u-badge> -->
-				</van-grid-item>
+					</van-grid-item>
+				</template>
 			</van-grid>
 		</view>
 	</view>
@@ -74,77 +76,7 @@
 <script setup>
 import { Jump } from "@/utils/common";
 
-// 我的订单
-let myOrderNav = reactive([{
-	text: "待发货",
-	icon: "center/order1.svg"
-	,
-	value: 2
-},
-{
-	text: "待收货",
-	icon: "center/order2.svg"
-	,
-	value: 2
-},
-{
-	text: "已完成",
-	icon: "center/order3.svg"
-	,
-	value: 2
-}, {
-	text: "全部订单",
-	icon: "center/order4.svg"
-	,
-}
-])
-// 会员中心
-let vipCenterNav = reactive([
-	{
-		text: "钱包",
-		icon: "center/s1.svg",
-		jump: "/pages/myWallet/myWallet"
-	},
-	{
-		text: "推荐好友",
-		icon: "/center/s2.svg",
-	},
-	{
-		text: "我的地址",
-		icon: "center/s3.svg",
-		jump: "/pages/address/address"
-	},
-	{
-		text: "意见反馈",
-		icon: "center/s4.svg",
-		jump: "/pages/feedback/feedback"
-	},
-	{
-		text: "我的仓库",
-		icon: "center/s5.svg",
-		jump: "/pages/myHouse/myHouse"
-	},
-	{
-		text: "在线客服",
-		icon: "/center/s6.svg",
-	},
-	{
-		text: "设置",
-		icon: "center/s7.svg",
-		jump: '/pages/set/set'
-
-	}, {
-		text: "碎片交易",
-		icon: "center/s8.svg",
-		jump: "/pages/debrisExchange/debrisExchange"
-	}
-])
-function navto(jump) {
-	uni.navigateTo({
-		url: jump,
-
-	})
-}
+const { vipCenterNav, myOrderNav } = storeToRefs(centerStore())
 </script>
 
 <style lang="scss" scoped>

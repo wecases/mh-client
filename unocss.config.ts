@@ -1,4 +1,4 @@
-import { defineConfig } from 'unocss'
+import { defineConfig, transformerDirectives } from 'unocss'
 import {
     presetApplet,
     transformerApplet,
@@ -7,7 +7,7 @@ import {
 import presetIcons from '@unocss/preset-icons'
 
 // https://github.com/iconify/tools
-import  "./bin/convert";
+import "./bin/convert";
 
 export default defineConfig({
     presets: [
@@ -24,5 +24,6 @@ export default defineConfig({
         // Don't change the following order
         transformerAttributify(),
         transformerApplet(),
+        transformerDirectives(),
     ],
 })

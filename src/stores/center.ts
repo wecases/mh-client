@@ -1,3 +1,4 @@
+// @unocss-include
 export const centerStore = defineStore('center', {
     state: () => ({
         myOrderNav: [

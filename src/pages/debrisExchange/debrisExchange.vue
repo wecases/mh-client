@@ -7,7 +7,7 @@
 		<view class="sell" @click="$u.route('/pages/sell/sell')">
 			<view class="but">
 				<view class="img">
-					<image src="@/static/img/center/sell.svg" mode=""></image>
+					<!-- <image src="@/static/img/center/sell.svg" mode=""></image> -->
 				</view>
 				<view class="">
 					出售碎片

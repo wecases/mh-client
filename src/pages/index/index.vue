@@ -9,8 +9,8 @@
 						<image src="@/static/img/index/search.png"></image>
 						<input type="text" placeholder="手机系列盲盒" placeholder-style="color:#B5B8BA;">
 					</view>
-					<view class="singin"  @click="showPopup">
-						<image src="@/static/img/index/qiandao.svg"></image>
+					<view class="singin" @click="showPopup">
+						<!-- <image src="@/static/img/index/qiandao.svg"></image> -->
 						签到
 					</view>
 				</view>
@@ -82,7 +82,7 @@
 				<view class="signBtn" @click="siginEvent">立即签到</view>
 			</view>
 			<view class="closePop" @click="close('siginShow')">
-				<image src="@/static/close.svg"></image>
+				<!-- <image src="@/static/close.svg"></image> -->
 			</view>
 		</van-popup>
 		<!-- 奖励弹框 -->
@@ -100,7 +100,7 @@
 				</view>
 			</view>
 			<view class="closePop" @click="close('siginAward')">
-				<image src="@/static/close.svg"></image>
+				<!-- <image src="@/static/close.svg"></image> -->
 			</view>
 		</van-popup>
 
@@ -151,14 +151,15 @@ page {
 				display: flex;
 				flex-direction: column;
 				margin-left: 2rem;
+
 				>image {
 					width: 1.5rem;
 					height: 1.5rem;
 				}
 
 				color: #333333ff;
- font-size: 0.63rem;
- font-weight: 400;
+				font-size: 0.63rem;
+				font-weight: 400;
 			}
 
 			.search {

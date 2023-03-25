@@ -16,10 +16,10 @@
 				"text": "分类"
 			},
 			{
-				"pagePath": "pages/message/message",
+				"pagePath": "pages/myHouse/myHouse",
 				"iconPath": "../src/static/img/tabbar/icon3.svg",
 				"selectedIconPath": "static/img/tabbar/iconAct3.svg",
-				"text": "消息"
+				"text": "仓库"
 			},
 			{
 				"pagePath": "pages/center/center",
@@ -159,6 +159,13 @@
 		},
 		{
 			"path": "pages/goodGift/goodGift",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/myCoupon/myCoupon",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false

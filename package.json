@@ -46,7 +46,7 @@
     "@dcloudio/uni-mp-alipay": "3.0.0-3070920230324001",
     "@dcloudio/uni-mp-baidu": "3.0.0-3070920230324001",
     "@dcloudio/uni-mp-jd": "3.0.0-3070920230324001",
-    "@dcloudio/uni-mp-kuaishou": "3.0.0-3070920230324001",
+    "@dcloudio/uni-mp-kuaishou": "3.0.0-alpha-3071220230324001",
     "@dcloudio/uni-mp-lark": "3.0.0-3070920230324001",
     "@dcloudio/uni-mp-qq": "3.0.0-3070920230324001",
     "@dcloudio/uni-mp-toutiao": "3.0.0-3070920230324001",

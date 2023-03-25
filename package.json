@@ -52,6 +52,8 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-3070920230324001",
     "@dcloudio/uni-mp-weixin": "3.0.0-3070920230324001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-3070920230324001",
+    "@vueuse/integrations": "^9.13.0",
+    "qrcode": "^1.5.1",
     "vue": "^3.2.47",
     "vue-i18n": "^9.2.2"
   },
@@ -62,6 +64,7 @@
     "@dcloudio/uni-stacktracey": "3.0.0-3070920230324001",
     "@dcloudio/vite-plugin-uni": "3.0.0-3070920230324001",
     "@iconify/tools": "^2.2.6",
+    "@types/qrcode": "^1.5.0",
     "@uni-helper/uni-app-types": "^0.5.3",
     "@unocss/preset-icons": "^0.50.6",
     "@vue/tsconfig": "^0.1.3",

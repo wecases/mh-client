@@ -8,9 +8,6 @@
 					<input type="text" placeholder="手机系列盲盒" placeholder-style="color:#B5B8BA;">
 				</view>
 			</view>
-			<!-- 			<view class="flex" style="width: 120%; flex: 1;">
-				<u-tabs active-color="#2979ff" lineColor="#7D71F5" :list="shopNav" :is-scroll="false" :current="current" @change="change"></u-tabs>
-			</view> -->
 			<!-- 导航栏 -->
 			<view class="tab">
 				<view v-for="(tab, index) in shopNav" :key="index" class="left" @click="tabbarActIndex = index">
@@ -18,7 +15,6 @@
 						<view :class="{ actNav: index == tabbarActIndex }">{{ tab.name }}</view>
 						<view v-if="tabbarActIndex == index" class="tabBorder"></view>
 					</view>
-
 				</view>
 			</view>
 		</view>

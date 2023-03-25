@@ -16,7 +16,7 @@
 				</view>
 				<view class="bottom">
 					<template v-for="(item, index) in nav" :key="index">
-						<view class="aa" @click="$u.route(item.jump)">{{ item.text }}</view>
+						<view class="aa" @click="Jump(item.jump)">{{ item.text }}</view>
 						<text v-if="index !== 3">|</text>
 					</template>
 				</view>

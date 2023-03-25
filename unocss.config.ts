@@ -1,4 +1,4 @@
-import { defineConfig } from 'unocss'
+import { defineConfig, transformerDirectives } from 'unocss'
 import {
     presetApplet,
     transformerApplet,
@@ -7,10 +7,9 @@ import {
 import presetIcons from '@unocss/preset-icons'
 
 // https://github.com/iconify/tools
-import  "./bin/convert";
+import "./bin/convert";
 
 export default defineConfig({
-    include:[/\.ts$/,/\.vue$/],
     presets: [
         // https://github.com/unocss-applet/unocss-applet
         presetApplet(),
@@ -25,5 +24,17 @@ export default defineConfig({
         // Don't change the following order
         transformerAttributify(),
         transformerApplet(),
+        transformerDirectives(),
     ],
+    rules: [
+        ['color', { color: '#7D71F5' }],
+        ['price', { color: '#F09244' }],
+        ['sale', { color: '#CCCCCC' }],
+    ],
+    shortcuts: {
+        'flex-start': 'flex items-center justify-start',
+        'flex-center': 'flex items-center justify-center',
+        'flex-between': 'flex items-center justify-between',
+        'flex-around': 'flex items-center justify-around',
+    }
 })

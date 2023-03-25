@@ -9,7 +9,7 @@
 				<view class="price">
 					<view class="unity">￥{{ shop.price }}</view>
 					<view v-if="type == 1" class="look">
-						<image src="@/static/img/center/look.svg" mode=""></image>
+						<!-- <image src="@/static/img/center/look.svg" mode=""></image> -->
 						<text>120</text>
 					</view>
 				</view>

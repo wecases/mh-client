@@ -1,3 +1,4 @@
+// @unocss-include
 export const centerStore = defineStore('center', {
     state: () => ({
         myOrderNav: [
@@ -48,7 +49,7 @@ export const centerStore = defineStore('center', {
                 text: "我的仓库",
                 icon: "i-icon-s5",
                 color: '#7893FC',
-                jump: "/pages/myHouse/myHouse"
+                jump: "/pages/myCoupon/myCoupon"
             },
             {
                 text: "在线客服",

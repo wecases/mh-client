@@ -10,8 +10,8 @@
 						<input type="text" placeholder="手机系列盲盒" placeholder-style="color:#B5B8BA;">
 					</view>
 					<view class="singin" @click="showPopup">
-						<!-- <image src="@/static/img/index/qiandao.svg"></image> -->
-						签到
+						<view class="i-icon-qiandao color text-2xl"/>
+						<text>签到</text>
 					</view>
 				</view>
 				<!-- 轮播图 -->
@@ -82,7 +82,7 @@
 				<view class="signBtn" @click="siginEvent">立即签到</view>
 			</view>
 			<view class="closePop" @click="close('siginShow')">
-				<!-- <image src="@/static/close.svg"></image> -->
+				<view class="i-icon-yuanxingdacha text-2xl inline-block text-white"/>
 			</view>
 		</van-popup>
 		<!-- 奖励弹框 -->
@@ -100,7 +100,7 @@
 				</view>
 			</view>
 			<view class="closePop" @click="close('siginAward')">
-				<!-- <image src="@/static/close.svg"></image> -->
+				<view class="i-icon-yuanxingdacha text-2xl inline-block text-white"/>
 			</view>
 		</van-popup>
 
@@ -442,11 +442,5 @@ page {
 .closePop {
 	text-align: center;
 	margin-top: 1.44rem;
-
-	>image {
-		width: 1.43rem;
-		height: 1.43rem;
-	}
-
 }
 </style>

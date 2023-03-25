@@ -26,4 +26,7 @@ export default defineConfig({
         transformerApplet(),
         transformerDirectives(),
     ],
+    rules: [
+        ['color', { color: '#7D71F5' }],
+    ],
 })

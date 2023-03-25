@@ -18,15 +18,32 @@
             </view>
 
             <!-- 邀请流程图 -->
-            <View class="codeBox mt-3 pt-3 pb-3 flex-center flex-col">
-                <view class="center_title pb-2">
+            <View class="codeBox mt-3 pt-3 pb-3 flex flex-col">
+                <view class="center_title pb-2 text-center">
                     邀请流程
                 </view>
                 <view class="steps">
-                    <view class="iconBox">
-                        <view class="i-icon-icon2 text-2xl"></view>
+                    <view class="flex flex-row justify-around">
+                        <view class="flex flex-col items-center">
+                            <view class="iconBox flex-center">
+                                <view class="icon i-icon-fenxiang color text-3xl" style="color: #fff;" />
+                            </view>
+                            <view class="mt-2 text-xs" style="color: #666666ff;">分享好友</view>
+                        </view>
+                        <view class="flex flex-col items-center">
+                            <view class="iconBox flex-center">
+                                <view class="icon i-icon-fenxiang color text-3xl" style="color: #fff;" />
+                            </view>
+                            <view class="mt-2 text-xs" style="color: #666666ff;">分享好友</view>
+                        </view>
+                        <view class="flex flex-col items-center">
+                            <view class="iconBox flex-center">
+                                <view class="icon i-icon-fenxiang color text-3xl" style="color: #fff;" />
+                            </view>
+                            <view class="mt-2 text-xs" style="color: #666666ff;">分享好友</view>
+                        </view>
                     </view>
-                    <view class="i-icon-fenxiang color text-2xl pl-1" />
+
                 </view>
             </view>
             <!-- 邀请记录 -->
@@ -207,6 +224,16 @@ page {
                     padding: 0 6.25rem;
                     height: 2.75rem;
                     line-height: 2.75rem;
+                }
+            }
+
+            // 邀请流程
+            .steps {
+                .iconBox {
+                    background: #7d71f5ff;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    border-radius: 2.5rem;
                 }
             }
 

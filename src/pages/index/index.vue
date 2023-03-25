@@ -10,7 +10,7 @@
 						<input type="text" placeholder="手机系列盲盒" placeholder-style="color:#B5B8BA;">
 					</view>
 					<view class="singin" @click="showPopup">
-						<view class="i-icon-qiandao color text-2xl"/>
+						<view class="i-icon-qiandao color text-2xl" />
 						<text>签到</text>
 					</view>
 				</view>
@@ -47,7 +47,7 @@
 					</text>
 				</view>
 				<card list="1"></card>
-				<view class="row flex f-x-b" @click="Jump({ url: '/pages/hot/hot', params: { id: 1, name: 2 } })">
+				<view class="row flex f-x-b" @click="Jump('/pages/hot/hot', { params: { id: 1, name: 2 } })">
 					<text>热卖专区</text>
 					<text>更多
 						<image class="arrow" src="@/static/img/center/rightArrow.png" mode=""></image>
@@ -82,7 +82,7 @@
 				<view class="signBtn" @click="siginEvent">立即签到</view>
 			</view>
 			<view class="closePop" @click="close('siginShow')">
-				<view class="i-icon-yuanxingdacha text-2xl inline-block text-white"/>
+				<view class="i-icon-yuanxingdacha text-2xl inline-block text-white" />
 			</view>
 		</van-popup>
 		<!-- 奖励弹框 -->
@@ -100,7 +100,7 @@
 				</view>
 			</view>
 			<view class="closePop" @click="close('siginAward')">
-				<view class="i-icon-yuanxingdacha text-2xl inline-block text-white"/>
+				<view class="i-icon-yuanxingdacha text-2xl inline-block text-white" />
 			</view>
 		</van-popup>
 
@@ -108,7 +108,6 @@
 </template>
 
 <script setup>
-import { Jump } from "@/utils/common";
 // 签到弹出层显示
 const siginShow = ref(false)
 // 签到奖励

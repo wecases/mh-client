@@ -33,7 +33,7 @@ export default defineConfig({
         'src/stores',
         'src/utils',
       ],
-      defaultExportByFilename: true
+      vueTemplate:true
     }),
 
     // https://github.com/dishait/vite-plugin-use-modules

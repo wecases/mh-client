@@ -1,5 +1,4 @@
 type JumpParams = {
-    url: string,
     params: {
         [key: string]: string
     },
@@ -7,11 +6,20 @@ type JumpParams = {
     delta?: number
 };
 
-export const Jump = function (params: JumpParams) {
-    let url = params.url
-    params.params ? url += '?' + Object.keys(params.params).map(key => key + '=' + params.params[key]).join('&') : ''
+/**
+ * 跳转页面
+ * @description 跳转页面
+ * @param {string} url 跳转路径
+ * @param {object} params 跳转参数
+ * @param {string} params.url 跳转路径
+ * @param {object} params.params 跳转参数
+ * @param {string} params.event 跳转事件
+ * @param {number} params.delta 返回的页面数
+ */
+export const Jump = function (url: string, params?: JumpParams) {
+    params?.params ? url += '?' + Object.keys(params.params).map(key => key + '=' + params.params[key]).join('&') : ''
 
-    switch (params.event) {
+    switch (params?.event) {
         case 'redirectTo':
             uni.redirectTo({
                 url
@@ -24,7 +32,7 @@ export const Jump = function (params: JumpParams) {
             break;
         case 'switchTab':
             uni.switchTab({
-                url: params.url
+                url: url
             });
             break;
         case 'navigateBack':
@@ -41,6 +49,7 @@ export const Jump = function (params: JumpParams) {
 }
 
 /**
+ * 页面路径
  * @description 获取当前页面路径
  */
 export const Page = function () {

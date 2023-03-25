@@ -5,26 +5,26 @@
 		"list": [
 			{
 				"pagePath": "pages/index/index",
-				"iconPath": "../src/static/img/tabbar/icon1.svg",
-				"selectedIconPath": "static/img/tabbar/iconAct1.svg",
+				"iconPath": "/static/img/tabbar/icon/shouye.png",
+				"selectedIconPath": "static/img/tabbar/selected/shouye.png",
 				"text": "首页"
 			},
 			{
 				"pagePath": "pages/cateGory/cateGory",
-				"iconPath": "../src/static/img/tabbar/icon2.svg",
-				"selectedIconPath": "static/img/tabbar/iconAct2.svg",
+				"iconPath": "/static/img/tabbar/icon/fenlei.png",
+				"selectedIconPath": "static/img/tabbar/selected/fenlei.png",
 				"text": "分类"
 			},
 			{
 				"pagePath": "pages/myHouse/myHouse",
-				"iconPath": "../src/static/img/tabbar/icon3.svg",
-				"selectedIconPath": "static/img/tabbar/iconAct3.svg",
+				"iconPath": "/static/img/tabbar/icon/cangku.png",
+				"selectedIconPath": "static/img/tabbar/selected/cangku.png",
 				"text": "仓库"
 			},
 			{
 				"pagePath": "pages/center/center",
-				"iconPath": "../src/static/img/tabbar/icon4.svg",
-				"selectedIconPath": "static/img/tabbar/iconAct4.svg",
+				"iconPath": "/static/img/tabbar/icon/wode.png",
+				"selectedIconPath": "static/img/tabbar/selected/wode.png",
 				"text": "我的"
 			}
 		]

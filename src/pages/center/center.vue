@@ -13,7 +13,7 @@
 		<!-- 我的订单 -->
 		<view class="grid_box">
 			<view class="userInfo flex">
-				<view class="infoItem" @click="Jump({ url: '/pages/myWallet/myWallet' })">
+				<view class="infoItem" @click="Jump('/pages/myWallet/myWallet')">
 					<view class="infoTop">￥110.00</view>
 					<view class="infoBottom">账户余额</view>
 				</view>
@@ -61,7 +61,7 @@
 			</view>
 			<van-grid col="4" :border="false">
 				<template v-for="nav in vipCenterNav">
-					<van-grid-item class="grid_item flex items-center justify-center" @click="Jump({ url: nav.jump })">
+					<van-grid-item class="grid_item flex items-center justify-center" @click="Jump(nav.jump)">
 						<view :class="nav.icon" :style="{ color: nav.color }" text-3xl></view>
 						<view class="text">{{ nav.text }}</view>
 						<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
@@ -74,8 +74,6 @@
 </template>
 
 <script setup>
-import { Jump } from "@/utils/common";
-
 const { vipCenterNav, myOrderNav } = storeToRefs(centerStore())
 </script>
 

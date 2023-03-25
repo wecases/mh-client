@@ -64,6 +64,7 @@
     "@dcloudio/uni-stacktracey": "3.0.0-alpha-3070720230316001",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3070720230316001",
     "@iconify/tools": "^2.2.6",
+    "@types/qrcode": "^1.5.0",
     "@uni-helper/uni-app-types": "^0.5.3",
     "@unocss/preset-icons": "^0.50.6",
     "@vue/tsconfig": "^0.1.3",

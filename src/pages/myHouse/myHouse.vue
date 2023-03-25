@@ -1,6 +1,6 @@
 <template>
 	<view class="myHouse">
-		<navbar text="我的仓库"></navbar>
+		<navbar text="我的仓库" :noLeft="false"></navbar>
 		<view class="tab">
 			<view v-for="(tab, index) in shopNav" :key="index" class="left" @click="tabbarActIndex = index">
 				<view>

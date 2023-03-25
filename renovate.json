@@ -3,6 +3,7 @@
   "extends": [
     "config:base"
   ],
+  "automerge": true,
   "automergeType": "pr-comment",
   "automergeComment": "Can be updated."
 }

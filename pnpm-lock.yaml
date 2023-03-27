@@ -10,7 +10,7 @@ specifiers:
   '@dcloudio/uni-h5': 3.0.0-3070920230324001
   '@dcloudio/uni-mp-alipay': 3.0.0-3070920230324001
   '@dcloudio/uni-mp-baidu': 3.0.0-3070920230324001
-  '@dcloudio/uni-mp-jd': 3.0.0-3070920230324001
+  '@dcloudio/uni-mp-jd': 3.0.0-alpha-3071220230324001
   '@dcloudio/uni-mp-kuaishou': 3.0.0-3070920230324001
   '@dcloudio/uni-mp-lark': 3.0.0-3070920230324001
   '@dcloudio/uni-mp-qq': 3.0.0-alpha-3071220230324001
@@ -48,7 +48,7 @@ dependencies:
   '@dcloudio/uni-h5': 3.0.0-3070920230324001_vue@3.2.47
   '@dcloudio/uni-mp-alipay': 3.0.0-3070920230324001_vue@3.2.47
   '@dcloudio/uni-mp-baidu': 3.0.0-3070920230324001_vue@3.2.47
-  '@dcloudio/uni-mp-jd': 3.0.0-3070920230324001_vue@3.2.47
+  '@dcloudio/uni-mp-jd': 3.0.0-alpha-3071220230324001_vue@3.2.47
   '@dcloudio/uni-mp-kuaishou': 3.0.0-3070920230324001_vue@3.2.47
   '@dcloudio/uni-mp-lark': 3.0.0-3070920230324001_vue@3.2.47
   '@dcloudio/uni-mp-qq': 3.0.0-alpha-3071220230324001_vue@3.2.47
@@ -1622,14 +1622,14 @@ packages:
       - vue
     dev: false
 
-  /@dcloudio/uni-mp-jd/3.0.0-3070920230324001_vue@3.2.47:
-    resolution: {integrity: sha512-TGp+Z1ExMYb1Zod8mJuHXYa+9/kHGz02fTza8FBry83JTmQ7jLAt/ewZrkZ7ox4vnW20+Uhe/VZ71DwGPdTi9g==}
+  /@dcloudio/uni-mp-jd/3.0.0-alpha-3071220230324001_vue@3.2.47:
+    resolution: {integrity: sha512-MrYVEy7YmYiyQY7ox2VFK+uOpOFbG2RIfh23TIwM3HeTMO5y2lDcI495jl3izoYDE92H00NG/BolcGSfS4iVLw==}
     dependencies:
-      '@dcloudio/uni-cli-shared': 3.0.0-3070920230324001_vue@3.2.47
-      '@dcloudio/uni-mp-compiler': 3.0.0-3070920230324001_vue@3.2.47
-      '@dcloudio/uni-mp-vite': 3.0.0-3070920230324001_vue@3.2.47
-      '@dcloudio/uni-mp-vue': 3.0.0-3070920230324001
-      '@dcloudio/uni-shared': 3.0.0-3070920230324001
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3071220230324001_vue@3.2.47
+      '@dcloudio/uni-mp-compiler': 3.0.0-alpha-3071220230324001_vue@3.2.47
+      '@dcloudio/uni-mp-vite': 3.0.0-alpha-3071220230324001_vue@3.2.47
+      '@dcloudio/uni-mp-vue': 3.0.0-alpha-3071220230324001
+      '@dcloudio/uni-shared': 3.0.0-alpha-3071220230324001
       '@vue/shared': 3.2.47
     transitivePeerDependencies:
       - postcss

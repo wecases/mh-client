@@ -13,7 +13,7 @@ specifiers:
   '@dcloudio/uni-mp-jd': 3.0.0-3070920230324001
   '@dcloudio/uni-mp-kuaishou': 3.0.0-3070920230324001
   '@dcloudio/uni-mp-lark': 3.0.0-3070920230324001
-  '@dcloudio/uni-mp-qq': 3.0.0-3070920230324001
+  '@dcloudio/uni-mp-qq': 3.0.0-alpha-3071220230324001
   '@dcloudio/uni-mp-toutiao': 3.0.0-3070920230324001
   '@dcloudio/uni-mp-weixin': 3.0.0-3070920230324001
   '@dcloudio/uni-quickapp-webview': 3.0.0-alpha-3071220230324001
@@ -51,7 +51,7 @@ dependencies:
   '@dcloudio/uni-mp-jd': 3.0.0-3070920230324001_vue@3.2.47
   '@dcloudio/uni-mp-kuaishou': 3.0.0-3070920230324001_vue@3.2.47
   '@dcloudio/uni-mp-lark': 3.0.0-3070920230324001_vue@3.2.47
-  '@dcloudio/uni-mp-qq': 3.0.0-3070920230324001_vue@3.2.47
+  '@dcloudio/uni-mp-qq': 3.0.0-alpha-3071220230324001_vue@3.2.47
   '@dcloudio/uni-mp-toutiao': 3.0.0-3070920230324001_vue@3.2.47
   '@dcloudio/uni-mp-weixin': 3.0.0-3070920230324001_vue@3.2.47
   '@dcloudio/uni-quickapp-webview': 3.0.0-alpha-3071220230324001_vue@3.2.47
@@ -1676,13 +1676,13 @@ packages:
       - vue
     dev: false
 
-  /@dcloudio/uni-mp-qq/3.0.0-3070920230324001_vue@3.2.47:
-    resolution: {integrity: sha512-yF7vaGXe3btVlcMD0tt9yJRc8E5TstIkeG1A2EoBfAZX+slSiUMnbs+RQEWPE1ZeOGFP0M0B6h6HF/A5nrhFRw==}
+  /@dcloudio/uni-mp-qq/3.0.0-alpha-3071220230324001_vue@3.2.47:
+    resolution: {integrity: sha512-7gcN+bjomq8FFUd1iqX44HZyoqApQHjhfh4Aija3XC0TSSnSTAQyZWsaCLwYcav/CRj3cDNZt7ahgv1cR2QLZw==}
     dependencies:
-      '@dcloudio/uni-cli-shared': 3.0.0-3070920230324001_vue@3.2.47
-      '@dcloudio/uni-mp-vite': 3.0.0-3070920230324001_vue@3.2.47
-      '@dcloudio/uni-mp-vue': 3.0.0-3070920230324001
-      '@dcloudio/uni-shared': 3.0.0-3070920230324001
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3071220230324001_vue@3.2.47
+      '@dcloudio/uni-mp-vite': 3.0.0-alpha-3071220230324001_vue@3.2.47
+      '@dcloudio/uni-mp-vue': 3.0.0-alpha-3071220230324001
+      '@dcloudio/uni-shared': 3.0.0-alpha-3071220230324001
       '@vue/shared': 3.2.47
       fs-extra: 10.1.0
     transitivePeerDependencies:

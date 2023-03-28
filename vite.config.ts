@@ -28,6 +28,7 @@ export default defineConfig({
         'vue/macros',
         '@vueuse/core',
         'pinia',
+        'uni-app'
       ],
       dirs: [
         'src/stores',

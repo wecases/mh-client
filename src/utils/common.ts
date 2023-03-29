@@ -57,3 +57,11 @@ export const Page = function () {
     // 某些特殊情况下(比如页面进行redirectTo时的一些时机)，pages可能为空数组
     return `/${pages[pages.length - 1]?.route ?? ''}`
 }
+
+/**
+ * 将数字保留两位小数
+ * @description 将数字保留两位小数
+ */
+export const ToFixed = function (num: number) {
+    return num.toFixed(2)
+}

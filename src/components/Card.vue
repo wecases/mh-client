@@ -1,96 +1,89 @@
-<template>
-	<view class="flex">
-		<view class="card">
-			<view class="img">
-				<image src="@/static/logo.png"></image>
-			</view>
-			<view class="text ellipsis">
-				惊喜盲盒
-			</view>
-			<view class="price">
-				￥24.60
-			</view>
-			<view class="dd">
-				<view class="btn">去开盒</view>
-			</view>
-		</view>
-	</view>
-</template>
-
-<script setup lang="ts">
+<script lang="ts" setup>
 let props = withDefaults(defineProps<{
-	type: number,
-	list?: Array<object>
+    /**
+     * 卡片类型
+     * base: 基础卡片
+     * select: 选择卡片
+     * sell: 销售卡片
+     * @default 'base'
+     * @type CardType
+     */
+    type?: CardType
+
+    /**
+     * 是否显示选中
+     * @default false
+     * @type boolean
+     */
+    showSelected?: boolean
+
+    /**
+     * 索引
+     * @default 0
+     * @type number
+     */
+    index?: number
+
+    /**
+     * 数据
+     * @default []
+     * @type BoxInfo[]
+     */
+    info: CardInfo
 }>(), {
-	type: 1,
+    type: 'sell',
 })
-// let props = defineProps({
-// 		list: {
-// 			type: Array,
-// 			default:[{
-// 				title: "笔记本电脑盲盒",
-// 				price: 128.99,
-// 				vipPrice: 159.99,
-// 				orginPrice: 179.99
-// 			}, {
-// 				title: "笔记本电脑盲盒",
-// 				price: 128.99,
-// 				vipPrice: 159.99,
-// 				orginPrice: 179.99
-// 			}, ]
-// 		},
-// 		type: {
-// 			type: Number,
-// 			default: 0
-// 		}
-// 	})
-	// console.log("fhsdgiua",props.type)
+
+let { type, info, showSelected, index } = props
+
+const emits = defineEmits(['change'])
+
+function selected() {
+    // 如果是选择
+    if (showSelected) {
+        info.selected = !info.selected
+    }
+
+    // 返回点击事件并携带点击的数据
+    emits('change', info, index)
+}
 </script>
 
-<style  lang="scss" scoped>
-.card {
-	padding: 0.75rem 0.94rem;
-	border-radius: 0.63rem;
-	opacity: 1;
-	background: #ffffffff;
-
-	.img {
-		>image {
-			width: 4.38rem;
-			height: 4.38rem;
-		}
-	}
-
-	.text {
-		margin-top: 0.25rem;
-		color: #333333ff;
-		font-size: 0.75rem;
-		font-weight: 400;
-	}
-
-	.price {
-		margin-top: 0.25rem;
-		color: #f09244ff;
-		font-weight: 500;
-		text-align: left;
-		font-size: 0.88rem;
-		margin-top: 0.25rem;
-	}
-
-	.dd {
-		margin-top: 0.3rem;
-	}
-
-	.btn {
-		color: #ffffffff;
-		font-size: 0.69rem;
-		font-weight: 400;
-		border-radius: 1.88rem;
-		opacity: 1;
-		background: #7d71f5ff;
-		display: inline;
-		padding: 0.2rem 1rem;
-		margin-top: 0.3rem;
-	}
-}
-</style>
+<template>
+    <view class="bg-white rounded-xl" @click="selected()">
+        <view class="flex-center rounded-t-xl overflow-hidden w-full">
+            <van-image :src="info.image" width="100%" height="8rem" fit="cover" lazy-load />
+        </view>
+        <view class="p-2">
+            <view class="text-xs  pb-1">{{ info.title }}</view>
+            <view class="flex-between  pb-1">
+                <view class="price text-sm">
+                    <text class="text-xs">￥</text>
+                    <text>{{ ToFixed(<number>info.price) }}</text>
+                </view>
+                <template v-if="type == 'select' && showSelected">
+                    <van-checkbox v-model="info.selected" :checked-color="'#7D71F5'" :icon-size="'1rem'"
+                        @click="selected()" />
+                </template>
+                <template v-if="type == 'base'">
+                    <view class="sale text-xs line-through">
+                        <text>￥</text>
+                        <text>{{ info.sale }}</text>
+                    </view>
+                </template>
+                <template v-if="type == 'sell'">
+                    <view class="flex-center">
+                        <view class="i-icon-liulan  text-xs pl-1" />
+                        <text class="text-xs">{{ info.views }}</text>
+                    </view>
+                </template>
+            </view>
+            <template v-if="type == 'sell'">
+                <view class="flex-start pb-1">
+                    <van-image :src="info.user?.avatar" width="1rem" height="1rem" fit="cover" round lazy-load />
+                    <text class="caret-gray-400 text-xs pl-1">{{ info.user?.phone }}</text>
+                </view>
+            </template>
+        </view>
+    </view>
+</template>

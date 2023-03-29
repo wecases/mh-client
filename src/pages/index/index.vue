@@ -59,7 +59,7 @@
 			</view>
 		</view>
 		<!-- 签到弹出框 -->
-		<van-popup v-model:show="siginShow" style="width: 90%; background-color: transparent;">
+		<van-popup v-model:show="siginShow" :close-on-click-overlay="false" style="width: 90%; background-color: transparent;">
 			<view class="siginPopup">
 				<view class="title">累计签到赢好礼</view>
 				<view class="day">
@@ -86,7 +86,7 @@
 			</view>
 		</van-popup>
 		<!-- 奖励弹框 -->
-		<van-popup v-model:show="siginAward" style="width: 90%; background-color: transparent;">
+		<van-popup v-model:show="siginAwardShow" :close-on-click-overlay="false" style="width: 90%; background-color: transparent;">
 			<view class="award">
 				<view class="award_title">
 					恭喜获得10个金币
@@ -99,204 +99,250 @@
 					开心收下
 				</view>
 			</view>
-			<view class="closePop" @click="close('siginAward')">
+			<view class="closePop" @click="close('siginAwardShow')">
 				<view class="i-icon-yuanxingdacha text-2xl inline-block text-white" />
 			</view>
 		</van-popup>
+		<!-- 限时礼包弹出层 -->
+		<van-popup :show="limitGiftShow" :close-on-click-overlay="false" style="background-color: transparent;">
+			<view class="limit_gift">
+				<view class="limit_title flex-center pt-26 text-2xl">限时礼包</view>
+				<view class="gift_list mb-2 mt-10 ml-6 mr-6">
+					<template v-for="i in 6">
+						<view class="gift_item mb-3 flex">
+							<view class="left flex flex-col justify-center items-center">
+								<view class="price">
+									￥<text>50</text>
+								</view>
+								<view class="jian">
+									满90元可用
+								</view>
+							</view>
+							<view class="right flex-1 pl-6 pr-2 pt-4 pb-3">
+								<view class="row1 pt-1">新人专属限时福利</view>
+								<view class="row2 pt-1">有效期至2023.3.15</view>
+								<view class="row3 pt-1 flex justify-between items-center">
+									<view class="flex items-center">
+										使用说明
+										<view class="shuoming i-icon-shuoming pl-2 text-xs inline-block text-white" />
+									</view>
+									<view class="take_btn text-xs">
+										立即领取
+									</view>
+								</view>
+							</view>
+						</view>
+					</template>
 
+				</view>
+				<view class="all_btn">
+					全部领取
+				</view>
+			</view>
+			<view class="closePop" @click="close('limitGiftShow')">
+				<view class="i-icon-yuanxingdacha text-2xl inline-block text-white" />
+			</view>
+		</van-popup>
 	</view>
 </template>
 
 <script setup>
-// 签到弹出层显示
-const siginShow = ref(false)
-// 签到奖励
-const siginAward = ref(false)
-const showPopup = () => {
-	siginShow.value = true;
-};
-const siginEvent = () => {
-	siginShow.value = false
-	siginAward.value = true
-}
-// 关闭弹出层
-const close = (pop) => {
-	if (pop == 'siginAward') {
-		siginAward.value = false
-	} else if (pop == 'siginShow') {
+	// 签到弹出层显隐
+	const siginShow = ref(false)
+	// 签到奖励显隐
+	const siginAwardShow = ref(false)
+	// 限时礼包显隐
+	const limitGiftShow = ref(false)
+	const showPopup = () => {
+		siginShow.value = true;
+	};
+	// 去签到
+	const siginEvent = () => {
 		siginShow.value = false
-
+		siginAwardShow.value = true
 	}
-}
+	// 关闭图标事件
+	const close = (pop) => {
+		if (pop == 'siginAwardShow') {
+			siginAwardShow.value = false
+		} else if (pop == 'siginShow') {
+			siginShow.value = false
+		} else if (pop == 'limitGiftShow'){
+			limitGiftShow.value = false
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
-page {
-	padding: 0;
-	background: #f1f1f1ff;
-}
+	page {
+		padding: 0;
+		background: #f1f1f1ff;
+	}
 
-.index {
-	.top {
-		background: #ffffffff;
-		padding-top: 0.75rem;
+	.index {
+		.top {
+			background: #ffffffff;
+			padding-top: 0.75rem;
 
-		.header {
-			margin-bottom: 35rpx;
-			display: flex;
-			margin: 0 1rem;
-
-			.singin {
+			.header {
+				margin-bottom: 35rpx;
 				display: flex;
-				flex-direction: column;
-				margin-left: 2rem;
+				margin: 0 1rem;
 
-				>image {
-					width: 1.5rem;
-					height: 1.5rem;
-				}
+				.singin {
+					display: flex;
+					flex-direction: column;
+					margin-left: 2rem;
 
-				color: #333333ff;
-				font-size: 0.63rem;
-				font-weight: 400;
-			}
+					>image {
+						width: 1.5rem;
+						height: 1.5rem;
+					}
 
-			.search {
-				background: #F5F5F5;
-				border-radius: 35rpx;
-				padding: 0.38rem;
-				flex: 1;
-				display: flex;
-				align-items: center;
-
-				image {
-					width: 40rpx;
-					height: 40rpx;
-					margin-right: 15rpx;
-				}
-
-				input {
-					font-size: 30rpx;
+					color: #333333ff;
+					font-size: 0.63rem;
 					font-weight: 400;
 				}
+
+				.search {
+					background: #F5F5F5;
+					border-radius: 35rpx;
+					padding: 0.38rem;
+					flex: 1;
+					display: flex;
+					align-items: center;
+
+					image {
+						width: 40rpx;
+						height: 40rpx;
+						margin-right: 15rpx;
+					}
+
+					input {
+						font-size: 30rpx;
+						font-weight: 400;
+					}
+				}
+
+
 			}
 
+			.uni-margin-wrap {
+				position: relative;
+				// height: 210rpx !important;
+				border-radius: 50%;
+
+				.swipers {
+					height: calc(400rpx);
+				}
+
+				uni-swiper-item,
+				uni-swiper {
+					border-radius: 10rpx;
+				}
+
+				image {
+					width: 100%;
+					height: 280rpx;
+				}
+			}
+
+			.uni-margin-wrap {
+				position: relative;
+				// height: 210rpx !important;
+				border-radius: 50%;
+				margin: 16rpx;
+
+				.swipers {
+					height: calc(300rpx);
+				}
+
+				uni-swiper-item,
+				uni-swiper {
+					border-radius: 10rpx;
+				}
+
+				image {
+					width: 100%;
+					height: 280rpx;
+				}
+			}
 
 		}
 
-		.uni-margin-wrap {
-			position: relative;
-			// height: 210rpx !important;
-			border-radius: 50%;
-
-			.swipers {
-				height: calc(400rpx);
-			}
-
-			uni-swiper-item,
-			uni-swiper {
-				border-radius: 10rpx;
-			}
-
-			image {
-				width: 100%;
-				height: 280rpx;
-			}
+		.content {
+			padding: 0 1rem;
 		}
 
-		.uni-margin-wrap {
-			position: relative;
-			// height: 210rpx !important;
-			border-radius: 50%;
-			margin: 16rpx;
-
-			.swipers {
-				height: calc(300rpx);
-			}
-
-			uni-swiper-item,
-			uni-swiper {
-				border-radius: 10rpx;
-			}
-
-			image {
-				width: 100%;
-				height: 280rpx;
-			}
-		}
-
-	}
-
-	.content {
-		padding: 0 1rem;
-	}
-
-	.newUser {
-		// margin: 30rpx;
-		margin-top: 0.75rem;
-		border-radius: 10rpx;
-		opacity: 1;
-		background: #ffffffff;
-		padding: 0 10px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		.img {
-			>image {
-				width: 74px;
-				height: 74px;
-
-			}
-		}
-
-		.title {
-
-			.top {
-				font-size: 16px;
-				color: #333333ff;
-				text-align: center;
-				padding-bottom: 5px;
-			}
-
-			.bottom {
-				font-size: 10px
-			}
-		}
-
-		.newBuy {
-			padding: 0 0.56rem;
-			height: 1.25rem;
-			color: #ffffffff;
-			font-size: 10rpx;
-			border-radius: 20rpx;
+		.newUser {
+			// margin: 30rpx;
+			margin-top: 0.75rem;
+			border-radius: 10rpx;
 			opacity: 1;
-			background: #7d71f5ff;
+			background: #ffffffff;
+			padding: 0 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.img {
+				>image {
+					width: 74px;
+					height: 74px;
+
+				}
+			}
+
+			.title {
+
+				.top {
+					font-size: 16px;
+					color: #333333ff;
+					text-align: center;
+					padding-bottom: 5px;
+				}
+
+				.bottom {
+					font-size: 10px
+				}
+			}
+
+			.newBuy {
+				padding: 0 0.56rem;
+				height: 1.25rem;
+				color: #ffffffff;
+				font-size: 10rpx;
+				border-radius: 20rpx;
+				opacity: 1;
+				background: #7d71f5ff;
+			}
 		}
+
+		.row {
+			padding: 1.5rem 0 1rem;
+			display: flex;
+			justify-content: space-between;
+
+			:first-child {
+				color: #333333ff;
+				font-size: 0.88rem;
+				font-weight: 500;
+			}
+
+			:last-child {
+				color: #666666ff;
+				font-size: 11px;
+			}
+
+			.arrow {
+				width: 0.7rem;
+				height: 0.8rem;
+			}
+		}
+
 	}
 
-	.row {
-		padding: 1.5rem 0 1rem;
-		display: flex;
-		justify-content: space-between;
-
-		:first-child {
-			color: #333333ff;
-			font-size: 0.88rem;
-			font-weight: 500;
-		}
-
-		:last-child {
-			color: #666666ff;
-			font-size: 11px;
-		}
-
-		.arrow {
-			width: 0.7rem;
-			height: 0.8rem;
-		}
-	}
-
+	// 奖励弹出层
 	.award {
 		border-radius: 0.63rem;
 		opacity: 1;
@@ -341,105 +387,208 @@ page {
 			font-size: 1.38rem;
 		}
 	}
-}
 
-.siginPopup {
-	padding: 0.75rem;
-	margin: 0 auto;
-	border-radius: 0.63rem;
-	opacity: 1;
-	background: #ffffffff;
+	// 签到弹出层
+	.siginPopup {
+		padding: 0.75rem;
+		margin: 0 auto;
+		border-radius: 0.63rem;
+		opacity: 1;
+		background: #ffffffff;
 
-	.title {
-		color: #333333ff;
-		font-size: 1rem;
-		font-weight: 500;
-		text-align: center;
-		padding-bottom: 0.3rem;
-	}
-
-	.day {
-		display: flex;
-		justify-content: center;
-		margin-bottom: 0.75rem;
-
-		text {
-			border-radius: 1.25rem;
-			opacity: 1;
-			background: #aca4ffff;
-			padding: 0.2rem 0.8rem;
-			margin: 0 auto;
-			color: #ffffffff;
-			font-size: 0.69rem;
-			font-weight: 400;
+		.title {
+			color: #333333ff;
+			font-size: 1rem;
+			font-weight: 500;
+			text-align: center;
+			padding-bottom: 0.3rem;
 		}
-	}
 
-	.grid {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-
-		.grid_row {
+		.day {
 			display: flex;
-			width: 49%;
-			justify-content: space-between;
+			justify-content: center;
 			margin-bottom: 0.75rem;
-		}
 
-		.day7 {
-			width: 48%;
-			background-color: red;
-			margin-bottom: 0.75rem;
-			border-radius: 0.25rem;
-			background: #f1f1f1ff;
-		}
-
-		.grid_item {
-			width: 48%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			border-radius: 0.25rem;
-			opacity: 1;
-			background: #f1f1f1ff;
-			padding: 0.38rem 0;
-
-			.grid_item_day {
-				color: #666666ff;
-				font-size: 0.81rem;
+			text {
+				border-radius: 1.25rem;
+				opacity: 1;
+				background: #aca4ffff;
+				padding: 0.2rem 0.8rem;
+				margin: 0 auto;
+				color: #ffffffff;
+				font-size: 0.69rem;
 				font-weight: 400;
 			}
+		}
 
-			.grid_item_img {
-				>image {
-					width: 1.88rem;
-					height: 2rem;
+		.grid {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			.grid_row {
+				display: flex;
+				width: 49%;
+				justify-content: space-between;
+				margin-bottom: 0.75rem;
+			}
+
+			.day7 {
+				width: 48%;
+				background-color: red;
+				margin-bottom: 0.75rem;
+				border-radius: 0.25rem;
+				background: #f1f1f1ff;
+			}
+
+			.grid_item {
+				width: 48%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				border-radius: 0.25rem;
+				opacity: 1;
+				background: #f1f1f1ff;
+				padding: 0.38rem 0;
+
+				.grid_item_day {
+					color: #666666ff;
+					font-size: 0.81rem;
+					font-weight: 400;
+				}
+
+				.grid_item_img {
+					>image {
+						width: 1.88rem;
+						height: 2rem;
+					}
+				}
+
+				.grid_item_money {
+					color: #666666ff;
+					font-size: 0.69rem;
 				}
 			}
+		}
 
-			.grid_item_money {
-				color: #666666ff;
-				font-size: 0.69rem;
+		.signBtn {
+			height: 2.75rem;
+			border-radius: 1.88rem;
+			opacity: 1;
+			background: #7d71f5ff;
+			color: #ffffffff;
+			font-size: 1.06rem;
+			text-align: center;
+			line-height: 2.75rem;
+		}
+
+	}
+
+	// 限时礼包弹出层
+	.limit_gift {
+		width: 21rem;
+		height: 34rem;
+		background-image: url('@/static/img/index/giftBg.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 100% 100%;
+
+		.limit_title {
+			color: #ffffffff;
+			font-size: 1.5rem;
+			font-weight: 500;
+			font-family: "Source Han Sans CN";
+		}
+
+		.gift_list {
+			height: 18rem;
+			overflow-x: scroll;
+
+			.gift_item {
+				border-radius: 0.63rem;
+				opacity: 1;
+				background: linear-gradient(130.3deg, #7d71f5ff 0%, #e146feff 100%);
+
+				.left {
+					border-right: 0.02rem #ffffffff dashed;
+					width: 30%;
+
+					.price {
+						color: #ffffffff;
+						font-weight: 500;
+						font-family: "DIN Next LT Pro";
+						text-align: left;
+						font-size: 0.75rem;
+
+						text {
+							color: #ffffffff;
+							font-weight: 500;
+							font-family: "DIN Next LT Pro";
+							text-align: left;
+							font-size: 2.5rem;
+						}
+					}
+
+					.jian {
+						color: #ffffffff;
+						font-size: 0.69rem;
+						font-weight: 400;
+						font-family: "Source Han Sans CN";
+					}
+				}
+
+				.row1 {
+					color: #ffffffff;
+					font-size: 0.75rem;
+					font-weight: 500;
+					font-family: "Source Han Sans CN";
+				}
+
+				.row2 {
+					color: #ffffffff;
+					font-size: 0.63rem;
+					font-weight: 400;
+					font-family: "Source Han Sans CN";
+				}
+
+				.row3 {
+					color: #ffffffff;
+					font-size: 0.63rem;
+					font-weight: 400;
+					font-family: "Source Han Sans CN";
+
+				}
+
+				.take_btn {
+					background-image: url("../../static/img/index/take_btn.png");
+					width: 5.56rem;
+					height: 2rem;
+					background-size: 100% 100%;
+					background-repeat: no-repeat;
+					line-height: 2rem;
+					text-align: center;
+				}
 			}
+		}
+
+		.all_btn {
+			color: #ffffffff;
+			font-size: 1.38rem;
+			font-weight: 500;
+			font-family: "Source Han Sans CN";
+			margin: 0 auto;
+			background-image: url("../../static/img/index/take_btn.png");
+			width: 13.19rem;
+			height: 3.6rem;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			line-height: 3.6rem;
+			text-align: center;
 		}
 	}
 
-	.signBtn {
-		height: 2.75rem;
-		border-radius: 1.88rem;
-		opacity: 1;
-		background: #7d71f5ff;
-		color: #ffffffff;
-		font-size: 1.06rem;
+	.closePop {
 		text-align: center;
-		line-height: 2.75rem;
+		margin-top: 1.44rem;
 	}
-
-}
-
-.closePop {
-	text-align: center;
-	margin-top: 1.44rem;
-}
 </style>

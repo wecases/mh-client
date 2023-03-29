@@ -29,12 +29,12 @@ const onClickLeft = () => {
 </script>
 
 <style lang="scss" scoped>
-/deep/.van-nav-bar__content {
+::v-deep .van-nav-bar__content {
     background-color: transparent !important;
     border: none;
 }
 
-/deep/.van-nav-bar {
+::v-deep .van-nav-bar {
     background-color: transparent !important;
     border: none;
 

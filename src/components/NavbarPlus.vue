@@ -5,7 +5,7 @@
                 <van-icon name="arrow-left" size="20" :color="color" />
             </template>
             <template #title>
-                <view class="nav_titile_text" :style="{color:color}">{{ text }}</view>
+                <view class="nav_titile_text" :style="{ color: color }">{{ text }}</view>
             </template>
         </van-nav-bar>
     </view>
@@ -14,21 +14,21 @@
 
 const props = defineProps({
     text: {
-		type: String,
-		default: ""
-	},
+        type: String,
+        default: ""
+    },
     // 字体图标颜色
-    color:{
-        type:String,
-        default:'#ffffffff'
+    color: {
+        type: String,
+        default: '#ffffffff'
     }
 })
-const onClickLeft = () =>{
+const onClickLeft = () => {
     uni.navigateBack()
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 /deep/.van-nav-bar__content {
     background-color: transparent !important;
     border: none;

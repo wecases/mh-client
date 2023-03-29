@@ -47,7 +47,7 @@
 					</text>
 				</view>
 				<card list="1"></card>
-				<view class="row flex f-x-b" @click="Jump('/pages/hot/hot', { params: { id: 1, name: 2 } })">
+				<view class="row" @click="Jump('/pages/hot/hot', { params: { id: 1, name: 2 } })">
 					<text>热卖专区</text>
 					<text>更多
 						<image class="arrow" src="@/static/img/center/rightArrow.png" mode=""></image>
@@ -168,9 +168,15 @@
 		} else if (pop == 'siginShow') {
 			siginShow.value = false
 		} else if (pop == 'limitGiftShow'){
-			limitGiftShow.value = false
-		}
+			limitGiftShow.value = false		}
 	}
+const { getUserInfo, goLogin } = userStore()
+onShow(async () => {
+	await goLogin()
+	await getUserInfo()
+})
+const { user, userinfo } = $(storeToRefs(userStore()))
+console.log(user.name, 'userInfo');
 </script>
 
 <style lang="scss" scoped>

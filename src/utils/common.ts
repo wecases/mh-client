@@ -1,6 +1,6 @@
 type JumpParams = {
     params: {
-        [key: string]: string
+        [key: string]: any
     },
     event?: 'navigateTo' | 'redirectTo' | 'reLaunch' | 'switchTab' | 'navigateBack',
     delta?: number

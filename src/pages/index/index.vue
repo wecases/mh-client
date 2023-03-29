@@ -20,10 +20,10 @@
 						:interval="interval" :duration="duration"> -->
 					<swiper class="swipers" circular>
 						<swiper-item>
-							<image src="@/static/logo.png" mode=""></image>
+							<image src="@/static/logo.png"></image>
 						</swiper-item>
 						<swiper-item>
-							<image src="@/static/logo.png" mode=""></image>
+							<image src="@/static/logo.png"></image>
 						</swiper-item>
 					</swiper>
 				</view>
@@ -31,7 +31,7 @@
 			<view class="content">
 				<view class="newUser flex f-x-b f-y-c">
 					<view class="img flex f-y-c">
-						<image src="@/static/logo.png" mode=""></image>
+						<image src="@/static/logo.png"></image>
 					</view>
 					<view class="title">
 						<view class="top">新人必抽盲盒</view>
@@ -44,14 +44,14 @@
 				<view class="row">
 					<text>新上盲盒</text>
 					<text>更多
-						<image class="arrow" src="@/static/img/center/rightArrow.png" mode=""></image>
+						<image class="arrow" src="@/static/img/center/rightArrow.png"></image>
 					</text>
 				</view>
 				<card-list :list="newBoxList"></card-list>
 				<view class="row" @click="Jump('/pages/hot/hot', { params: { id: 1, name: 2 } })">
 					<text>热卖专区</text>
 					<text>更多
-						<image class="arrow" src="@/static/img/center/rightArrow.png" mode=""></image>
+						<image class="arrow" src="@/static/img/center/rightArrow.png"></image>
 					</text>
 
 				</view>
@@ -148,7 +148,7 @@
 	</view>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // 签到弹出层显隐
 const siginShow = ref(false)
 // 签到奖励显隐
@@ -164,7 +164,7 @@ const siginEvent = () => {
 	siginAwardShow.value = true
 }
 // 关闭图标事件
-const close = (pop) => {
+const close = (pop: string) => {
 	if (pop == 'siginAwardShow') {
 		siginAwardShow.value = false
 	} else if (pop == 'siginShow') {
@@ -172,6 +172,7 @@ const close = (pop) => {
 	} else if (pop == 'limitGiftShow') {
 		limitGiftShow.value = false
 	}
+}
 const { getUserInfo, goLogin } = userStore()
 const { getHotBoxList, getNewBoxList } = boxStore()
 onShow(async () => {
@@ -186,171 +187,171 @@ console.log(user.name, 'userInfo');
 </script>
 
 <style lang="scss" scoped>
-	page {
-		padding: 0;
-		background: #f1f1f1ff;
-	}
+page {
+	padding: 0;
+	background: #f1f1f1ff;
+}
 
-	.index {
-		.top {
-			background: #ffffffff;
-			padding-top: 0.75rem;
+.index {
+	.top {
+		background: #ffffffff;
+		padding-top: 0.75rem;
 
-			.header {
-				margin-bottom: 35rpx;
+		.header {
+			margin-bottom: 35rpx;
+			display: flex;
+			margin: 0 1rem;
+
+			.singin {
 				display: flex;
-				margin: 0 1rem;
+				flex-direction: column;
+				margin-left: 2rem;
 
-				.singin {
-					display: flex;
-					flex-direction: column;
-					margin-left: 2rem;
+				>image {
+					width: 1.5rem;
+					height: 1.5rem;
+				}
 
-					>image {
-						width: 1.5rem;
-						height: 1.5rem;
-					}
+				color: #333333ff;
+				font-size: 0.63rem;
+				font-weight: 400;
+			}
 
-					color: #333333ff;
-					font-size: 0.63rem;
+			.search {
+				background: #F5F5F5;
+				border-radius: 35rpx;
+				padding: 0.38rem;
+				flex: 1;
+				display: flex;
+				align-items: center;
+
+				image {
+					width: 40rpx;
+					height: 40rpx;
+					margin-right: 15rpx;
+				}
+
+				input {
+					font-size: 30rpx;
 					font-weight: 400;
 				}
-
-				.search {
-					background: #F5F5F5;
-					border-radius: 35rpx;
-					padding: 0.38rem;
-					flex: 1;
-					display: flex;
-					align-items: center;
-
-					image {
-						width: 40rpx;
-						height: 40rpx;
-						margin-right: 15rpx;
-					}
-
-					input {
-						font-size: 30rpx;
-						font-weight: 400;
-					}
-				}
-
-
 			}
 
-			.uni-margin-wrap {
-				position: relative;
-				// height: 210rpx !important;
-				border-radius: 50%;
-
-				.swipers {
-					height: calc(400rpx);
-				}
-
-				uni-swiper-item,
-				uni-swiper {
-					border-radius: 10rpx;
-				}
-
-				image {
-					width: 100%;
-					height: 280rpx;
-				}
-			}
-
-			.uni-margin-wrap {
-				position: relative;
-				// height: 210rpx !important;
-				border-radius: 50%;
-				margin: 16rpx;
-
-				.swipers {
-					height: calc(300rpx);
-				}
-
-				uni-swiper-item,
-				uni-swiper {
-					border-radius: 10rpx;
-				}
-
-				image {
-					width: 100%;
-					height: 280rpx;
-				}
-			}
 
 		}
 
-		.content {
-			padding: 0 1rem;
+		.uni-margin-wrap {
+			position: relative;
+			// height: 210rpx !important;
+			border-radius: 50%;
+
+			.swipers {
+				height: calc(400rpx);
+			}
+
+			uni-swiper-item,
+			uni-swiper {
+				border-radius: 10rpx;
+			}
+
+			image {
+				width: 100%;
+				height: 280rpx;
+			}
 		}
 
-		.newUser {
-			// margin: 30rpx;
-			margin-top: 0.75rem;
-			border-radius: 10rpx;
+		.uni-margin-wrap {
+			position: relative;
+			// height: 210rpx !important;
+			border-radius: 50%;
+			margin: 16rpx;
+
+			.swipers {
+				height: calc(300rpx);
+			}
+
+			uni-swiper-item,
+			uni-swiper {
+				border-radius: 10rpx;
+			}
+
+			image {
+				width: 100%;
+				height: 280rpx;
+			}
+		}
+
+	}
+
+	.content {
+		padding: 0 1rem;
+	}
+
+	.newUser {
+		// margin: 30rpx;
+		margin-top: 0.75rem;
+		border-radius: 10rpx;
+		opacity: 1;
+		background: #ffffffff;
+		padding: 0 10px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.img {
+			>image {
+				width: 74px;
+				height: 74px;
+
+			}
+		}
+
+		.title {
+
+			.top {
+				font-size: 16px;
+				color: #333333ff;
+				text-align: center;
+				padding-bottom: 5px;
+			}
+
+			.bottom {
+				font-size: 10px
+			}
+		}
+
+		.newBuy {
+			padding: 0 0.56rem;
+			height: 1.25rem;
+			color: #ffffffff;
+			font-size: 10rpx;
+			border-radius: 20rpx;
 			opacity: 1;
-			background: #ffffffff;
-			padding: 0 10px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-
-			.img {
-				>image {
-					width: 74px;
-					height: 74px;
-
-				}
-			}
-
-			.title {
-
-				.top {
-					font-size: 16px;
-					color: #333333ff;
-					text-align: center;
-					padding-bottom: 5px;
-				}
-
-				.bottom {
-					font-size: 10px
-				}
-			}
-
-			.newBuy {
-				padding: 0 0.56rem;
-				height: 1.25rem;
-				color: #ffffffff;
-				font-size: 10rpx;
-				border-radius: 20rpx;
-				opacity: 1;
-				background: #7d71f5ff;
-			}
+			background: #7d71f5ff;
 		}
+	}
 
 	.row {
 		padding: 1.5rem 0 1rem;
 		display: flex;
 		justify-content: space-between;
 
-			:first-child {
-				color: #333333ff;
-				font-size: 0.88rem;
-				font-weight: 500;
-			}
-
-			:last-child {
-				color: #666666ff;
-				font-size: 11px;
-			}
-
-			.arrow {
-				width: 0.7rem;
-				height: 0.8rem;
-			}
+		:first-child {
+			color: #333333ff;
+			font-size: 0.88rem;
+			font-weight: 500;
 		}
+
+		:last-child {
+			color: #666666ff;
+			font-size: 11px;
+		}
+
+		.arrow {
+			width: 0.7rem;
+			height: 0.8rem;
+		}
+	}
 
 }
 
@@ -408,91 +409,91 @@ console.log(user.name, 'userInfo');
 	opacity: 1;
 	background: #ffffffff;
 
-		.title {
-			color: #333333ff;
-			font-size: 1rem;
-			font-weight: 500;
-			text-align: center;
-			padding-bottom: 0.3rem;
+	.title {
+		color: #333333ff;
+		font-size: 1rem;
+		font-weight: 500;
+		text-align: center;
+		padding-bottom: 0.3rem;
+	}
+
+	.day {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 0.75rem;
+
+		text {
+			border-radius: 1.25rem;
+			opacity: 1;
+			background: #aca4ffff;
+			padding: 0.2rem 0.8rem;
+			margin: 0 auto;
+			color: #ffffffff;
+			font-size: 0.69rem;
+			font-weight: 400;
+		}
+	}
+
+	.grid {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		.grid_row {
+			display: flex;
+			width: 49%;
+			justify-content: space-between;
+			margin-bottom: 0.75rem;
 		}
 
-		.day {
-			display: flex;
-			justify-content: center;
+		.day7 {
+			width: 48%;
+			background-color: red;
 			margin-bottom: 0.75rem;
+			border-radius: 0.25rem;
+			background: #f1f1f1ff;
+		}
 
-			text {
-				border-radius: 1.25rem;
-				opacity: 1;
-				background: #aca4ffff;
-				padding: 0.2rem 0.8rem;
-				margin: 0 auto;
-				color: #ffffffff;
-				font-size: 0.69rem;
+		.grid_item {
+			width: 48%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 0.25rem;
+			opacity: 1;
+			background: #f1f1f1ff;
+			padding: 0.38rem 0;
+
+			.grid_item_day {
+				color: #666666ff;
+				font-size: 0.81rem;
 				font-weight: 400;
 			}
-		}
 
-		.grid {
-			display: flex;
-			justify-content: space-between;
-			flex-wrap: wrap;
-
-			.grid_row {
-				display: flex;
-				width: 49%;
-				justify-content: space-between;
-				margin-bottom: 0.75rem;
-			}
-
-			.day7 {
-				width: 48%;
-				background-color: red;
-				margin-bottom: 0.75rem;
-				border-radius: 0.25rem;
-				background: #f1f1f1ff;
-			}
-
-			.grid_item {
-				width: 48%;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				border-radius: 0.25rem;
-				opacity: 1;
-				background: #f1f1f1ff;
-				padding: 0.38rem 0;
-
-				.grid_item_day {
-					color: #666666ff;
-					font-size: 0.81rem;
-					font-weight: 400;
-				}
-
-				.grid_item_img {
-					>image {
-						width: 1.88rem;
-						height: 2rem;
-					}
-				}
-
-				.grid_item_money {
-					color: #666666ff;
-					font-size: 0.69rem;
+			.grid_item_img {
+				>image {
+					width: 1.88rem;
+					height: 2rem;
 				}
 			}
-		}
 
-		.signBtn {
-			height: 2.75rem;
-			border-radius: 1.88rem;
-			opacity: 1;
-			background: #7d71f5ff;
-			color: #ffffffff;
-			font-size: 1.06rem;
-			text-align: center;
-			line-height: 2.75rem;
+			.grid_item_money {
+				color: #666666ff;
+				font-size: 0.69rem;
+			}
 		}
+	}
+
+	.signBtn {
+		height: 2.75rem;
+		border-radius: 1.88rem;
+		opacity: 1;
+		background: #7d71f5ff;
+		color: #ffffffff;
+		font-size: 1.06rem;
+		text-align: center;
+		line-height: 2.75rem;
+	}
 
 }
 
@@ -599,8 +600,8 @@ console.log(user.name, 'userInfo');
 	}
 }
 
-	.closePop {
-		text-align: center;
-		margin-top: 1.44rem;
-	}
+.closePop {
+	text-align: center;
+	margin-top: 1.44rem;
+}
 </style>

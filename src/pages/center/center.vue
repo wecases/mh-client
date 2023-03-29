@@ -36,16 +36,12 @@
 			<navigator url="/pages/myOrders/myOrders">
 				<view class="top">
 					<view class="title">我的订单</view>
-					<view class="check flex f-y-c">
-						查看更多
-						<image src="@/static/img/center/rightArrow.png" mode=""></image>
-					</view>
 				</view>
 				<van-grid :border="false" col="4">
 					<template v-for="nav in myOrderNav">
 						<van-grid-item class="grid_item">
-							<view :class="nav.icon" text-2xl></view>
-							<view class="text">{{ nav.text }}</view>
+							<view  :class="nav.icon" text-3xl text3></view>
+							<view class="text pt-1 text3">{{ nav.text }}</view>
 							<!-- <u-badge v-if="nav.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
 							:value="nav.value"></u-badge> -->
 						</van-grid-item>

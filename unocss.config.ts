@@ -30,6 +30,7 @@ export default defineConfig({
         ['color', { color: '#7D71F5' }],
         ['price', { color: '#F09244' }],
         ['sale', { color: '#CCCCCC' }],
+        ['text3', { color: '#333333' }],
     ],
     shortcuts: {
         'flex-start': 'flex items-center justify-start',

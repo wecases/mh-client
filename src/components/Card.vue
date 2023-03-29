@@ -11,7 +11,7 @@
 				￥24.60
 			</view>
 			<view class="dd">
-				<view class="btn">去开盒</view>
+				<view class="btn" @click="Jump('/pages/openBlind/openBlind', { params: { id: '1' } })">去开盒</view>
 			</view>
 		</view>
 	</view>

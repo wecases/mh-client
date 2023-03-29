@@ -16,8 +16,9 @@
 				</view>
 				<!-- 轮播图 -->
 				<view class="uni-margin-wrap">
-					<swiper class="swipers" circular :indicator-dots="indicatorDots" :autoplay="autoplay"
-						:interval="interval" :duration="duration">
+					<!-- <swiper class="swipers" circular :indicator-dots="indicatorDots" :autoplay="autoplay"
+						:interval="interval" :duration="duration"> -->
+					<swiper class="swipers" circular>
 						<swiper-item>
 							<image src="@/static/logo.png" mode=""></image>
 						</swiper-item>
@@ -46,7 +47,7 @@
 						<image class="arrow" src="@/static/img/center/rightArrow.png" mode=""></image>
 					</text>
 				</view>
-				<card list="1"></card>
+				<card-list :list="newBoxList"></card-list>
 				<view class="row" @click="Jump('/pages/hot/hot', { params: { id: 1, name: 2 } })">
 					<text>热卖专区</text>
 					<text>更多
@@ -54,8 +55,7 @@
 					</text>
 
 				</view>
-
-				<card-list></card-list>
+				<card-list :list="hotBoxList"></card-list>
 			</view>
 		</view>
 		<!-- 签到弹出框 -->
@@ -128,11 +128,15 @@ const close = (pop) => {
 	}
 }
 const { getUserInfo, goLogin } = userStore()
+const { getHotBoxList, getNewBoxList } = boxStore()
 onShow(async () => {
+	await getNewBoxList()
+	await getHotBoxList()
 	await goLogin()
 	await getUserInfo()
 })
 const { user, userinfo } = $(storeToRefs(userStore()))
+const { newBoxList, hotBoxList } = $(storeToRefs(boxStore()));
 console.log(user.name, 'userInfo');
 </script>
 

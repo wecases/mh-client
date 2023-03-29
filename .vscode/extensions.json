@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "uni-helper.uni-app-snippets-vscode",
+        "mrmaoddxxaa.create-uniapp-view",
+        "antfu.unocss",
+        "vue.vscode-typescript-vue-plugin",
+        "antfu.iconify",
+        "irongeek.vscode-env",
+        "vivaxy.vscode-conventional-commits",
+        "ms-ceintl.vscode-language-pack-zh-hans",
+        "editorconfig.editorconfig",
+        "eamodio.gitlens",
+        "ritwickdey.liveserver",
+        "vscode-icons-team.vscode-icons",
+        "voorjaar.windicss-intellisense"
+    ]
+}

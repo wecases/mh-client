@@ -4,7 +4,6 @@
 		"dockerfile": "Dockerfile",
 		"context": ".."
 	},
-
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
@@ -13,21 +12,26 @@
 			"extensions": [
 				"MS-CEINTL.vscode-language-pack-zh-hans",
 				"usernamehw.errorlens",
-				"AMiner.codegeex",
-				"vivaxy.vscode-conventional-commits",
-				"EditorConfig.EditorConfig",
 				"IronGeek.vscode-env",
 				"GitHub.vscode-pull-request-github",
+				"Vue.volar",
+				"uni-helper.uni-app-snippets-vscode",
+				"mrmaoddxxaa.create-uniapp-view",
+				"antfu.unocss",
+				"vue.vscode-typescript-vue-plugin",
+				"antfu.iconify",
+				"irongeek.vscode-env",
+				"vivaxy.vscode-conventional-commits",
+				"editorconfig.editorconfig",
 				"eamodio.gitlens",
-				"Vue.vscode-typescript-vue-plugin",
-				"Vue.volar"
+				"ritwickdey.liveserver",
+				"vscode-icons-team.vscode-icons",
+				"voorjaar.windicss-intellisense"
 			]
 		}
 	},
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
-
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "root"
 }

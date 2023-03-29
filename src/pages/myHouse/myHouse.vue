@@ -1,73 +1,16 @@
-<template>
-	<view class="myHouse">
-		<navbar text="我的仓库" :noLeft="false"></navbar>
-		<view class="tab">
-			<view v-for="(tab, index) in shopNav" :key="index" class="left" @click="tabbarActIndex = index">
-				<view>
-					<text :class="{ actNav: index == tabbarActIndex }">{{ tab.name }}</text>
-					<view v-if="tabbarActIndex == index" class="tabBorder flex f-x-c"></view>
-				</view>
-			</view>
-		</view>
-		<view v-if="tabbarActIndex != 1" class="compound flex">
-			<view class="card" v-for="item, index in 6" :key="index">
-				<image src="@/static/logo.png" mode=""></image>
-				<view class="info">
-					<view class="name">
-						联想笔记本电脑
-					</view>
-					<view class="price">
-						价值￥4000.00
-					</view>
-				</view>
-			</view>
-		</view>
-		<view v-else class="debris">
-			<view class="debrisCard" v-for="item, index in 6 " :key="index">
-				<view class="top">
-					<view class="left">
-						<image src="@/static/logo.png" mode=""></image>
-					</view>
-					<view class="right">
-						<view class="name">笔记本电脑</view>
-						<view class="title">高端游戏性能</view>
-						<view class="price">价值￥4000.00</view>
-					</view>
-				</view>
+<script setup lang="ts">
+const { getClassBoxList } = boxStore()
+const { classBoxList } = $(storeToRefs(boxStore()));
 
-				<view class="bottom">
-					<van-grid col="4">
-						<van-grid-item class="grid_item t-c" v-for="(item, index) in debris" :key="index">
-							<image src="@/static/logo.png" mode=""></image>
-							<view class="text">{{ item.name }}</view>
-							<!-- <van-badge v-if="item.value" absolute :offset="[-5, 10]" numberType="limit" :type="type" max="99"
-							:value="item.value"></van-badge> -->
-						</van-grid-item>
-					</van-grid>
-				</view>
-			</view>
-		</view>
-	</view>
-</template>
+onShow(async () => {
+	await getClassBoxList()
+})
 
-<script setup>
+const selected = $ref(false)
 
-let shopNav = ref([{
-	name: "我合成的",
-	numberKey: 1,
-	status: null
-
-},
-{
-	name: "我的碎片",
-	numberKey: 2,
-	status: null
-}
-
-],);
-const tabbarActIndex = ref(0)
+const tabbarActIndex = $ref(0)
 // 碎片列表
-let debris = ref([
+let debris = $ref([
 	{
 		name: "碎片1",
 		value: 2
@@ -79,75 +22,93 @@ let debris = ref([
 		value: 2
 	},
 ])
+
+function select(card: CardInfo) {
+
+}
+watch($$(selected), () => {
+	classBoxList.forEach((item) => {
+		item.selected = selected
+	})
+})
 </script>
+
+<template>
+	<view class="myHouse">
+		<view class="mb-6">
+			<van-tabs v-model:active="tabbarActIndex" :color="'#7d71f5'" :line-width="15" :sticky="true" swipeable>
+				<van-tab title="我合成的">
+					<view class="p-4">
+						<card-list :list="classBoxList" type="select" showSelected @change="select"></card-list>
+						<card-list :list="classBoxList" type="select" showSelected @change="select"></card-list>
+						<card-list :list="classBoxList" type="select" showSelected @change="select"></card-list>
+						<card-list :list="classBoxList" type="select" showSelected @change="select"></card-list>
+						<card-list :list="classBoxList" type="select" showSelected @change="select"></card-list>
+						<card-list :list="classBoxList" type="select" showSelected @change="select"></card-list>
+						<card-list :list="classBoxList" type="select" showSelected @change="select"></card-list>
+						<card-list :list="classBoxList" type="select" showSelected @change="select"></card-list>
+					</view>
+				</van-tab>
+				<van-tab title="我的碎片">
+					<view class="debris">
+						<template v-for="item, index in 6 ">
+							<view class="debrisCard">
+								<view class="top">
+									<view class="left">
+										<image src="@/static/logo.png"></image>
+									</view>
+									<view class="right">
+										<view class="name">笔记本电脑</view>
+										<view class="title">高端游戏性能</view>
+										<view class="price">价值￥4000.00</view>
+									</view>
+								</view>
+
+								<view class="bottom">
+									<van-grid col="4">
+										<van-grid-item class="grid_item t-c" v-for="(item, index) in debris" :key="index">
+											<image src="@/static/logo.png"></image>
+											<view class="text">{{ item.name }}</view>
+										</van-grid-item>
+									</van-grid>
+								</view>
+							</view>
+						</template>
+					</view>
+				</van-tab>
+			</van-tabs>
+		</view>
+		<template v-if="tabbarActIndex == 0">
+			<view class="fixed w-full bottom-11 bg-white">
+				<view class="flex-between px-4 py-2">
+					<view>
+						<van-checkbox v-model="selected" :checked-color="'#7D71F5'" :icon-size="'1rem'" @click="!selected">
+							已选(1)
+						</van-checkbox>
+					</view>
+					<view>
+
+					</view>
+				</view>
+			</view>
+		</template>
+	</view>
+</template>
 
 <style lang="scss" scoped>
 page {
 	padding: 0;
 	background-color: #f1f1f1;
+	--uno: pb-4;
 }
 
 .myHouse {
-
-	.tab {
-		color: #333333ff;
-		font-size: 0.88rem;
-		font-weight: 500;
-		padding: 0.75rem 30rpx;
-		background: #ffffffff;
-		display: flex;
-		justify-content: space-around;
-
-		.actNav {
-			// color: #7d71f5ff;
-		}
-
-		.tabBorder {
-			width: 0.88rem;
-			height: 0.19rem;
-			border-radius: 0.31rem;
-			background-color: #7d71f5ff;
-			margin: 0 auto;
-			margin-top: 0.1rem;
-		}
-	}
-
 	.compound {
 		padding: 0 1rem;
 		flex-wrap: wrap;
 		flex-shrink: 0;
 		justify-content: space-between;
 		display: flex;
-
-		.card {
-			margin-top: 1rem;
-			border-radius: 0.63rem;
-			background: #ffffffff;
-
-			image {
-				width: 10.31rem;
-				height: 7.88rem;
-			}
-
-			.info {
-				padding: 0.3rem 0 0.44rem 0.75rem;
-
-				.name {
-					color: #333333ff;
-					font-size: 0.75rem;
-					font-weight: 400;
-				}
-
-				.price {
-					color: #f09244ff;
-					font-weight: 400;
-					text-align: left;
-					font-size: 0.75rem;
-				}
-			}
-
-		}
-
 	}
 
 	.debris {

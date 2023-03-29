@@ -2,7 +2,7 @@
     <view class="couponList">
         <view class="list" v-if="list.length">
             <template v-for="item in props.list">
-                <view class="item flex items-center mb-3" :class="{actItem:actNav==1}">
+                <view class="item flex items-center mb-3" :class="{ actItem: actNav == 1 }">
                     <view class="left flex flex-col justify-center items-center">
                         <view>
                             <text>￥</text>{{ item.price }}
@@ -54,9 +54,10 @@ let props = defineProps({
 <style lang="scss" scoped>
 .couponList {
     .list {
-        .actItem{
+        .actItem {
             filter: grayscale(50%)
         }
+
         .item {
             border-radius: 0 0.63rem 0.63rem 0;
             opacity: 1;

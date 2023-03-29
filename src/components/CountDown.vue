@@ -25,7 +25,7 @@ let prop = defineProps({
 .colon {
     display: inline-block;
     margin: 0 4px;
-    color:#ffa065ff;
+    color: #ffa065ff;
     font: size 0.63rem;
 }
 
@@ -39,7 +39,7 @@ let prop = defineProps({
     font-weight: 400;
     font-family: "Source Han Sans CN";
     border-radius: 0.13rem;
-opacity: 1;
-background: #ffa065ff;
+    opacity: 1;
+    background: #ffa065ff;
 }
 </style>

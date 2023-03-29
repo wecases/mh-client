@@ -13,4 +13,8 @@
     "create-uniapp-view.template": "vue3",
     "create-uniapp-view.style": "scss",
     "create-uniapp-view.typescript": true,
+    "files.autoSave": "afterDelay",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
 }

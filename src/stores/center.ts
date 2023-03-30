@@ -33,6 +33,7 @@ export const centerStore = defineStore('center', {
                 text: "推荐好友",
                 icon: "i-icon-tuijian",
                 color: '#FCB54B',
+                jump: "/pages/invite/invite"
             },
             {
                 text: "我的地址",

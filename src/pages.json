@@ -2,6 +2,8 @@
 	"tabBar": {
 		"color": "#CCCCCC",
 		"selectedColor": "#7D71F5",
+		"backgroundColor": "#ffffff",
+		"borderStyle": "#ffffff",
 		"list": [
 			{
 				"pagePath": "pages/index/index",
@@ -180,6 +182,13 @@
 		},
 		{
 			"path": "pages/openBlind/openBlind",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/debrisDetails/debrisDetails",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false

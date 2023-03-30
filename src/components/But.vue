@@ -2,7 +2,7 @@
 	<view>
 		<view class="bottom"></view>
 		<view class="addBox" style="display: flex; justify-content: center;">
-			<view class="add">{{ text }}</view>
+			<view class="add" @click="$emit('submit')">{{ text }}</view>
 		</view>
 	</view>
 </template>

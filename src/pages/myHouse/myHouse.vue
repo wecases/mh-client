@@ -79,15 +79,16 @@ watch($$(selected), () => {
 			</van-tabs>
 		</view>
 		<template v-if="tabbarActIndex == 0">
-			<view class="fixed w-full bottom-11 bg-white">
-				<view class="flex-between px-4 py-2">
+			<view class="checkBottom fixed w-full bottom-11 bg-white">
+				<view class="flex-between items-center px-4 pt-3 pb-4">
 					<view>
 						<van-checkbox v-model="selected" :checked-color="'#7D71F5'" :icon-size="'1rem'" @click="!selected">
 							已选(1)
 						</van-checkbox>
 					</view>
-					<view>
-
+					<view class="flex">
+						<view class="btn1">一键转卖</view>
+						<view class="btn2 ml-3">我要收货</view>
 					</view>
 				</view>
 			</view>
@@ -100,6 +101,11 @@ page {
 	padding: 0;
 	background-color: #f1f1f1;
 	--uno: pb-4;
+}
+
+::deep .uni-tabbar-border {
+	background-color: red !important;
+	height: 4rem;
 }
 
 .myHouse {
@@ -183,6 +189,35 @@ page {
 					}
 				}
 			}
+		}
+	}
+
+	// 合成底部功能区
+	.checkBottom {
+		color: #333333ff;
+		font-size: 0.75rem;
+		font-weight: 400;
+		font-family: "Inter";
+
+		.btn1 {
+			color: #7d71f5ff;
+			font-size: 0.81rem;
+			font-weight: 400;
+			border-radius: 1rem;
+			opacity: 1;
+			border: 0.06rem solid #7d71f5ff;
+			padding: 0.2rem 0.88rem;
+		}
+
+		.btn2 {
+			color: #ffffffff;
+			font-size: 0.81rem;
+			font-weight: 400;
+			border-radius: 1rem;
+			opacity: 1;
+			background: #7d71f5ff;
+			padding: 0.2rem 0.88rem;
+
 		}
 	}
 }

@@ -31,6 +31,11 @@ watch($$(selected), () => {
 		item.selected = selected
 	})
 })
+
+// 触底加载
+function touchBottom() {
+	console.log("页面触底");
+}
 </script>
 
 <template>
@@ -51,29 +56,33 @@ watch($$(selected), () => {
 				</van-tab>
 				<van-tab title="我的碎片">
 					<view class="debris">
-						<template v-for="item, index in 6 ">
-							<view class="debrisCard">
-								<view class="top">
-									<view class="left">
-										<image src="@/static/logo.png"></image>
-									</view>
-									<view class="right">
-										<view class="name">笔记本电脑</view>
-										<view class="title">高端游戏性能</view>
-										<view class="price">价值￥4000.00</view>
-									</view>
-								</view>
-
-								<view class="bottom">
-									<van-grid col="4">
-										<van-grid-item class="grid_item t-c" v-for="(item, index) in debris" :key="index">
+						<touch-list :getData="touchBottom">
+							<template v-for="item, index in 6 ">
+								<view class="debrisCard">
+									<view class="top">
+										<view class="left">
 											<image src="@/static/logo.png"></image>
-											<view class="text">{{ item.name }}</view>
-										</van-grid-item>
-									</van-grid>
+										</view>
+										<view class="right">
+											<view class="name">笔记本电脑</view>
+											<view class="title">高端游戏性能</view>
+											<view class="price">价值￥4000.00</view>
+										</view>
+									</view>
+
+									<view class="bottom">
+										<van-grid col="4">
+											<van-grid-item class="grid_item t-c" v-for="(item, index) in debris"
+												:key="index">
+												<image src="@/static/logo.png"></image>
+												<view class="text">{{ item.name }}</view>
+											</van-grid-item>
+										</van-grid>
+									</view>
 								</view>
-							</view>
-						</template>
+							</template>
+						</touch-list>
+
 					</view>
 				</van-tab>
 			</van-tabs>

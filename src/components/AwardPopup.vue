@@ -202,7 +202,7 @@ const siginEvent = () => {
         }
 
         .day7 {
-            width: 48%;
+            width: 49%;
             background-color: red;
             margin-bottom: 0.75rem;
             border-radius: 0.25rem;

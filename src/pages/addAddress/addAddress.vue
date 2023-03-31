@@ -3,7 +3,7 @@
 		<navbar text="添加收货地址"></navbar>
 		<view class="content">
 			<!-- 收货地址信息 -->
-			<view class="addressInfo">
+			<!-- <view class="addressInfo">
 				<view class="item flex">
 					<view class="title">收货人</view>
 					<input placeholder-style="color: #999" type="text" placeholder="填写收货人姓名">
@@ -18,56 +18,59 @@
 						placeholder="请选择省、市、区">
 					<image class="arrow absolute" src="@/static/img/rightArrow.png" mode=""></image>
 				</view>
-				<view class="item flex">
+				<view class="item flex" @click="addShow = true">
 					<view class="title">详细地址</view>
 					<input placeholder-style="color: #999" type="text" placeholder="小区楼栋/乡村名称">
 				</view>
-			</view>
+			</view> -->
 		</view>
 		<!-- 省市区 -->
+		<!-- <van-popup position="bottom" v-model:show="addShow" style>
+			<van-area title="标题" :area-list="areaList" :columns-placeholder="['请选择', '请选择', '请选择']"
+				@cancel="addShow = false" />
+		</van-popup> -->
 
+
+		<van-address-edit area-placeholder="请选择省、市、区" :area-columns-placeholder="d" :area-list="areaList" show-set-default
+			area-columns-placeholder="['请选择', '请选择', '请选择']" @save="onSave" @delete="onDelete"
+			@change-detail="onChangeDetail" name="收货人" />
 	</view>
 </template>
 
 <script setup>
-
-import {
-	ref,
-	reactive,
-} from "vue"
-// let address = reactive({
-// 	// 是否设置为默认地址
-// 	is_default: false,
-// 	// 省id
-// 	province_id: null,
-// 	// 市id
-// 	city_id: null,
-// 	// 区id
-// 	area_id: null,
-// 	// 收货人姓名
-// 	name: "",
-// 	// 收货人手机号
-// 	mobile: "",
-// 	// 详细地址
-// 	detail: ""
-// })
+import { areaList } from '@vant/area-data';
+let d = ["s",]
+// 城市选择
+let addShow = ref(false)
+let address = reactive({
+	// 是否设置为默认地址
+	is_default: false,
+	// 省id
+	province_id: null,
+	// 市id
+	city_id: null,
+	// 区id
+	area_id: null,
+	// 收货人姓名
+	name: "",
+	// 收货人手机号
+	mobile: "",
+	// 详细地址
+	detail: ""
+})
 // 城市选择器显示隐藏开关
 let addressShow = ref(false)
 // 选择的地区
 let areaAddress = ref('')
-let editId = ref(null)
 
-let columns = ref([
 
-])
-let columnData = ref([
-
-])
-
-function addressShows() {
-	addressShow.value = true
-	console.log('addressShow', addressShow.value);
-}
+const onSave = () => showToast('save');
+const onDelete = () => showToast('delete');
+const onChangeDetail = (val) => {
+	address = Object.assign(address, { detail: val })
+	// address.detail = val
+	console.log(address.detail);
+};
 
 </script>
 

@@ -2,45 +2,51 @@
 	<view class="address">
 		<navbar text="我的地址"></navbar>
 		<view class="content">
-			<view class="addressBox" v-for="item, index in 4" :key="index">
+			<view class="addressBox" v-for="item, index in orderList" :key="index">
 				<view class="top">
 					<view class="left">
 						<view class="user">
-							<view class="name">猪猪侠</view>
-							<view class="phone">18823434438</view>
+							<view class="name">{{ item.name }}</view>
+							<view class="phone">{{ item.phone }}</view>
 						</view>
-						<view class="addres">河南省郑州市郑东新区翠林路12号</view>
+						<view class="addres">{{ item.address }}</view>
 					</view>
 					<view class="right">
-						<svg xmlns="http://www.w3.org/2000/svg" class="na86hx6j1__icon na86hx6j1__design-iconfont"
-							viewBox="0 0 1024 1024">
-							<path
-								d="M864 501.024a32 32 0 1 1 64 0V768a160 160 0 0 1-160 160H256a160 160 0 0 1-160-160V256a160 160 0 0 1 160-160h304.576a32 32 0 1 1 0 64H256a96 96 0 0 0-96 96v512a96 96 0 0 0 96 96h512a96 96 0 0 0 96-96v-266.976z m-13.824-353.056a32 32 0 0 1 46.784 43.648L547.84 566.08a32 32 0 1 1-46.816-43.648L850.176 147.968z">
-							</path>
-						</svg>
+						<view class="i-icon-bianji"></view>
 					</view>
 				</view>
 				<view class="default"></view>
 				<view class="fun flex f-y-c f-x-b">
-					<!-- 默认地址 -->
-					<view class="defaultAddress flex f-y-c">
-						<!-- 		<image
-												:src="default == 1 ? '@/static/address/yuanAct.png' : '@/static/address/yuan.png'"
-												mode=""></image> -->
-						<image src="@/static/img/address/yuan.png" mode=""></image>
-						默认地址
+					<view>
+						<van-checkbox v-model="item.is_def" :checked-color="'#7D71F5'" :icon-size="'1rem'"
+							@click="!selected">
+							默认地址
+						</van-checkbox>
 					</view>
-					<!-- 删除 -->
 					<view class="delete">删除</view>
 				</view>
 			</view>
 		</view>
-		<but text="新增地址" @click=""></but>
+		<but text="新增地址" @submit="Jump('/pages/addAddress/addAddress')"></but>
 	</view>
 </template>
 
 <script setup>
-
+let selected = ref(false)
+let orderList = reactive([
+	{
+		name: "猪猪侠",
+		phone: "138748349334",
+		address: "河南省郑州市郑东新区翠林路12号",
+		is_def: true
+	},
+	{
+		name: "猪猪侠",
+		phone: "138748349334",
+		address: "河南省郑州市郑东新区翠林路12号",
+		is_def: false
+	}
+])
 </script>
 
 <style lang="scss" scoped>
@@ -71,6 +77,7 @@ page {
 					.user {
 						display: flex;
 						align-items: center;
+
 						.name {
 							color: #333;
 							font-size: 0.9rem;

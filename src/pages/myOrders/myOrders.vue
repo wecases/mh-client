@@ -5,7 +5,8 @@
 		<navbar text="我的订单"></navbar>
 		<view class="BookService">
 			<van-tabs v-model:active="active">
-				<van-tab v-for="item, index in shopNav" :key="index" :title="item.name"></van-tab>
+				<van-tab v-model="active" sticky title-active-color="#144a9e" color="#144a9e" v-for="item, index in shopNav"
+					:key="index" :title="item.name"></van-tab>
 			</van-tabs>
 			<view class="orderList">
 				<view class="orderItem" v-for="item, index in 5" :key="index">
@@ -20,7 +21,7 @@
 						<view class="right">
 							<view class="name">笔记本电脑</view>
 							<view class="text">gaogdsfsdd</view>
-							<view class="value flex f-x-b">
+							<view class="value flex justify-between">
 								<view class="price">价值￥4000.00</view>
 								<view class="num">×1</view>
 							</view>
@@ -29,7 +30,9 @@
 					</view>
 					<view class="flex" style="justify-content: right;">
 						<view class="bottom flex">
-							<view class="but1">订单详情</view>
+							<view class="but1" @click="Jump('/pages/orderDetail/orderDetail', { params: { orderId: 1 } })">
+								订单详情
+							</view>
 							<view class="but2">提醒发货</view>
 						</view>
 					</view>
@@ -40,8 +43,6 @@
 </template>
 
 <script setup>
-
-
 // 商品导航栏
 let shopNav = ref([{
 	name: "全部"
@@ -72,8 +73,13 @@ watch(active, (active, prevCount) => {
 	console.log(active)
 })
 </script>
-
+<style>
+</style>
 <style lang="scss" scoped>
+:deep(.van-tabs__line) {
+	background-color: #7d71f5 !important;
+}
+
 page {
 	padding: 0;
 	margin: 0;

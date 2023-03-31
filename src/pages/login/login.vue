@@ -2,27 +2,11 @@
 	<view class="login">
 		<view class="bg"></view>
 		<view class="content">
-			<view class="loginTitle">快速登录</view>
-			<!-- 收货地址信息 -->
-			<!-- <view class="ipt">
-				<view class="addressInfo">
-					<view class="item flex">
-						<input placeholder-style="color: #999" type="text" placeholder="请输入您的手机号码">
-					</view>
-					<view class="item flex">
-						<input :maxlength="11" placeholder-style="color: #999" type="number" placeholder="请输入验证码">
-					</view>
-					<view class="item flex">
-						<input placeholder-style="color: #999" type="password" placeholder="小区楼栋/乡村名称">
-					</view>
-				</view>
-			</view> -->
-			<van-cell-group inset>
+			<view class="loginTitle px4">快速登录</view>
+			<van-cell-group width="100%" inset>
 				<!-- 输入手机号，调起手机号键盘 -->
 				<van-field v-model="tel" type="tel" placeholder="请输入您的手机号码" />
 				<!-- 输入密码 -->
-
-
 				<van-field v-model="password" :type="passwordType" placeholder="请输入密码"
 					:rules="[{ required: true, message: '请填写密码' }]">
 					<template #right-icon>
@@ -43,7 +27,7 @@
 					</van-field>
 				</van-cell-group>
 			</van-cell-group>
-			<view class="row mt-3 flex justify-between">
+			<view class="row mt-3 mx-4 flex justify-between">
 				<view class="">
 					忘记密码
 				</view>
@@ -77,6 +61,11 @@ page {
 	min-height: 100%;
 }
 
+:deep .van-cell {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .login {
 	.bg {
 		background-image: url("../../static/img/login/Vector.png");
@@ -92,7 +81,7 @@ page {
 	.content {
 		border-radius: 0.88rem;
 		opacity: 1;
-		padding: 0 0.75rem;
+		// padding: 0 0.75rem;
 
 		.loginTitle {
 			color: #333333ff;
@@ -108,40 +97,6 @@ page {
 			font-size: 0.75rem;
 			font-weight: 400;
 			font-family: "Source Han Sans CN";
-		}
-
-		.addressInfo {
-
-			.item {
-				font-size: 28rpx;
-				font-weight: 500;
-				color: #282828;
-				padding-bottom: 20rpx;
-				margin-bottom: 30rpx;
-				border-bottom: 0.06rem solid #99999933;
-				position: relative;
-				display: flex;
-
-
-
-
-				input {
-					width: 68%;
-					height: 26rpx;
-					font-size: 28rpx;
-					font-weight: 500;
-					color: #282828;
-				}
-
-				.arrow {
-					width: 25rpx;
-					height: 25rpx;
-					right: 10rpx;
-					top: 20%;
-				}
-
-
-			}
 		}
 
 		.row {

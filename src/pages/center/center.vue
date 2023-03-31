@@ -159,7 +159,6 @@ page {
 		}
 
 		.top {
-			margin-bottom: 30rpx;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;

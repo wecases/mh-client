@@ -64,8 +64,8 @@ devDependencies:
     specifier: 3.0.0-alpha-3071220230331002
     version: 3.0.0-alpha-3071220230331002(postcss@8.4.21)(vue@3.2.47)
   '@dcloudio/uni-stacktracey':
-    specifier: 3.0.0-alpha-3071220230324001
-    version: 3.0.0-alpha-3071220230324001
+    specifier: 3.0.0-alpha-3071220230331002
+    version: 3.0.0-alpha-3071220230331002
   '@dcloudio/vite-plugin-uni':
     specifier: 3.0.0-alpha-3071220230324001
     version: 3.0.0-alpha-3071220230324001(postcss@8.4.21)(vite@4.2.1)(vue@3.2.47)
@@ -1841,8 +1841,8 @@ packages:
       '@vue/shared': 3.2.47
     dev: true
 
-  /@dcloudio/uni-stacktracey@3.0.0-alpha-3071220230324001:
-    resolution: {integrity: sha512-VF8ohZ7WuhXBmwGY82lDUKNfIqF5m6QO4ddHv6WzzjhCQWgb0lDWjxNIqJCzmF/BakTLHmkrBXNjBposslqCKw==}
+  /@dcloudio/uni-stacktracey@3.0.0-alpha-3071220230331002:
+    resolution: {integrity: sha512-wvnXKJsCF7LNfaIqOKJX+84G4zwm43CWzfpmk9Kt2JGKzMuNsLq2H7wdORkn9qRA0f/4ywy/6YbAyfWcyiQPpQ==}
     dev: true
 
   /@dcloudio/uni-stat@3.0.0-alpha-3071220230324001(postcss@8.4.21)(vue@3.2.47):

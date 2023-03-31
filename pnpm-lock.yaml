@@ -61,8 +61,8 @@ devDependencies:
     specifier: 3.0.0-alpha-3071220230331001
     version: 3.0.0-alpha-3071220230331001(jest-environment-node@27.5.1)(jest@27.0.4)(postcss@8.4.21)(vue@3.2.47)
   '@dcloudio/uni-cli-shared':
-    specifier: 3.0.0-alpha-3071220230324001
-    version: 3.0.0-alpha-3071220230324001(postcss@8.4.21)(vue@3.2.47)
+    specifier: 3.0.0-alpha-3071220230331001
+    version: 3.0.0-alpha-3071220230331001(postcss@8.4.21)(vue@3.2.47)
   '@dcloudio/uni-stacktracey':
     specifier: 3.0.0-alpha-3071220230324001
     version: 3.0.0-alpha-3071220230324001

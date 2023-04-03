@@ -18,7 +18,7 @@ declare type UserInfo = {
      * @default ''
      * @description 昵称
      */
-    nickname: string
+    name: string
 
     /**
      * 手机号
@@ -27,4 +27,9 @@ declare type UserInfo = {
      * @description 手机号
      */
     phone: string
+
+    /**
+     * 邀请码
+     */
+    invite_code: string
 }

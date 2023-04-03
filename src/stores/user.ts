@@ -1,21 +1,22 @@
-export const userStore = defineStore('userStore', {
+export const userStore = defineStore('user', {
     state: () => ({
-        user: {
-            name: '123'
-        },
-        userinfo: {}
+        user: <UserInfo>{},
     }),
     actions: {
         async getUserInfo() {
-            let { data } = await Api('/user').post().json()
 
-            this.userinfo = data.value
         },
-        async goLogin() {
+        async goLogin(params: object) {
             const { saveToken } = authStore()
-            const { data } = await Api('/login', true).post().json()
-
-            saveToken(data.value?.token)
+            const { data } = await Api('/login', true).post(params).json()
+            let res = data.value
+            if (res.code) {
+                saveToken(res.data.token)
+                this.user = res.data.user
+                return res.massage
+            }
+            return false
         }
-    }
+    },
+    persist: true
 })

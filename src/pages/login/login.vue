@@ -3,54 +3,82 @@
 		<view class="bg"></view>
 		<view class="content">
 			<view class="loginTitle px4">快速登录</view>
-			<van-cell-group width="100%" inset>
-				<!-- 输入手机号，调起手机号键盘 -->
-				<van-field v-model="tel" type="tel" placeholder="请输入您的手机号码" />
-				<!-- 输入密码 -->
-				<van-field v-model="password" :type="passwordType" placeholder="请输入密码"
-					:rules="[{ required: true, message: '请填写密码' }]">
-					<template #right-icon>
-						<span class="solts" @click="switchPasswordType">
-							<van-icon name="eye" v-if="passwordType === 'password'" />
-							<van-icon name="closed-eye" v-else />
-						</span>
-					</template>
-				</van-field>
-
-				<van-cell-group>
-					<van-field v-model="sms" center clearable placeholder="请输入短信验证码">
-						<template #button>
-							<view class="codeText">
-								点击获取
-							</view>
-						</template>
-					</van-field>
-				</van-cell-group>
-			</van-cell-group>
+			<!-- 登录 -->
+			<view px-4>
+				<van-form validate-trigger="onChange">
+					<van-cell-group inset>
+						<!-- 输入手机号，调起手机号键盘 -->
+						<van-field v-model="loginInfo.phone" :rules="[{ validator: phoneTest, message: '请输入正确手机号' }]"
+							type="tel" placeholder="请输入您的手机号码" />
+						<!-- 输入密码 -->
+						<van-field v-model="loginInfo.password" :rules="[{ validator: passTest, message: '密码不少于六位' }]"
+							:type="passwordType" placeholder="请输入密码">
+							<template #right-icon>
+								<span class="solts"
+									@click="passwordType == 'password' ? passwordType = 'text' : passwordType = 'password'">
+									<van-icon name="eye" v-if="passwordType == 'password'" />
+									<van-icon name="closed-eye" v-else />
+								</span>
+							</template>
+						</van-field>
+					</van-cell-group>
+				</van-form>
+			</view>
+			<!-- 注册 -->
 			<view class="row mt-3 mx-4 flex justify-between">
-				<view class="">
-					忘记密码
-				</view>
-				<view class="">
+				<view class="">忘记密码</view>
+				<view class="" @click="Jump('/pages/register/register')">
 					注册
 				</view>
 			</view>
-			<but text="登录"></but>
+			<but text="登录" @submit="submit"></but>
 		</view>
 
 	</view>
 </template>
 
 <script setup>
-// 密码
-let password = ref('')
-let sms = ref('')
-let tel = ref('')
+import { showToast } from 'vant';
 
+// 登录信息
+let loginInfo = reactive({
+	phone: '18812490455',
+	password: '123123',
+})
+
+// 手机号正则
+const phoneTest = (val) => /1\d{10}/.test(val);
+// 密码验证
+const passTest = (val) => val.length >= 6;
+//密码可以看见吗
 let passwordType = ref('password')
-// 密码框可见内容切换
-let switchPasswordType = () => {
-	passwordType.value = passwordType.value === 'password' ? 'text' : 'password'
+// 去登陆
+const { goLogin } = userStore()
+
+const submit = async () => {
+	if (phoneTest(loginInfo.phone) && passTest(loginInfo.password)) {
+		// let res = await Api('/login', true).post(loginInfo).json();
+		let res = await goLogin(loginInfo)
+		console.log(res);
+		if (!res) {
+			showFailToast('登录失败');
+		}
+		uni.showToast({
+			title: '登录成功',
+			icon: 'success',
+			duration: 1000,
+			success: function () {
+
+			}
+		})
+		setTimeout(() => {
+			uni.switchTab({
+				url: "/pages/index/index"   // 目标页面的路径
+			})
+		}, 1000);
+	} else {
+		showToast('请确认登录信息');
+	}
 }
 </script>
 

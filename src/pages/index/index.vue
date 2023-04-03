@@ -79,7 +79,7 @@ const { getHotBoxList, getNewBoxList } = boxStore()
 onShow(async () => {
 	await getNewBoxList()
 	await getHotBoxList()
-	// await goLogin()
+	await goLogin()
 	// await getUserInfo()
 })
 const { user, userinfo } = $(storeToRefs(userStore()))

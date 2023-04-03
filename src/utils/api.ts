@@ -43,6 +43,13 @@ export const Api = (url: string, unToken?: boolean) => {
 
             return ctx
         },
+        onFetchError(ctx) {
+
+            console.log(ctx, 'afterFetch');
+            uni.hideLoading();
+
+            return ctx
+        },
     })
 
     return fetch

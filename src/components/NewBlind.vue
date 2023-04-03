@@ -6,7 +6,7 @@
             </view>
             <view class="text ellipsis">
                 惊喜盲盒
-            </view>
+            </view> 
             <view class="price">
                 ￥24.60
             </view>
@@ -17,34 +17,34 @@
     </view>
 </template>
 
-<script setup lang="ts">
-let props = withDefaults(defineProps<{
-    type: number,
-    list?: Array<object>
-}>(), {
-    type: 1,
+<script setup>
+// let props = withDefaults(defineProps<{
+//     type: number,
+//     list?: Array<object>
+// }>(), {
+//     type: 1,
+// })
+let props = defineProps({
+    list: {
+        type: Array,
+        default: [{
+            title: "笔记本电脑盲盒",
+            price: 128.99,
+            vipPrice: 159.99,
+            orginPrice: 179.99
+        }, {
+            title: "笔记本电脑盲盒",
+            price: 128.99,
+            vipPrice: 159.99,
+            orginPrice: 179.99
+        },]
+    },
+    type: {
+        type: Number,
+        default: 0
+    }
 })
-// let props = defineProps({
-// 		list: {
-// 			type: Array,
-// 			default:[{
-// 				title: "笔记本电脑盲盒",
-// 				price: 128.99,
-// 				vipPrice: 159.99,
-// 				orginPrice: 179.99
-// 			}, {
-// 				title: "笔记本电脑盲盒",
-// 				price: 128.99,
-// 				vipPrice: 159.99,
-// 				orginPrice: 179.99
-// 			}, ]
-// 		},
-// 		type: {
-// 			type: Number,
-// 			default: 0
-// 		}
-// 	})
-	// console.log("fhsdgiua",props.type)
+console.log("fhsdgiua", props.type)
 </script>
 
 <style  lang="scss" scoped>

@@ -18,6 +18,15 @@ export default defineConfig({
       },
     },
   },
+  server: {
+    proxy: {
+      '/api': { // 代理前缀，只有以 /api 开头的请求会被代理
+        target: 'http://192.168.110.47:80', // 目标地址
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '') // 将 /api 前缀删除
+      }
+    }
+  },
   plugins: [
     Uni({
       vueOptions: {

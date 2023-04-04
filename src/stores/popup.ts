@@ -5,7 +5,9 @@ export const popupStore = defineStore('popup', {
         // 签到奖励显隐
         siginAwardShow: false,
         // 限时礼包显隐
-        limitGiftShow: false
+        limitGiftShow: false,
+        //弹出框显示隐藏
+        dialogShow: false
     }),
     actions: {
         unsiginShow() {
@@ -23,6 +25,14 @@ export const popupStore = defineStore('popup', {
         getSiginEvent() {
             this.siginShow = false
             this.siginAwardShow = true
+        },
+        // 弹出框组件关闭
+        closeDialog() {
+            this.dialogShow = false
+        },
+        // 弹出框组件打开
+        openDialog() {
+            this.dialogShow = true
         }
     }
 })

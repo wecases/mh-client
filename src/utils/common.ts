@@ -65,3 +65,18 @@ export const Page = function () {
 export const ToFixed = function (num: number) {
     return num.toFixed(2)
 }
+
+// title: 提示信息
+// callback：回调函数
+export const Toast = function (title: string, icon: UniApp.ShowToastOptions['icon'] = 'none', callback?: Function) {
+    uni.showToast({
+        title: title,
+        duration: 1000,
+        icon,
+    })
+    if (callback) {
+        setTimeout(() => {
+            callback()
+        }, 1000);
+    }
+}

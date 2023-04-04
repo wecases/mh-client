@@ -32,7 +32,7 @@
                                 </span>
                             </template>
                         </van-field>
-                        <van-field v-model="InvitationCode" type="tel" :disabled="!InvitationCode"
+                        <van-field v-model="InvitationCode" type="tel" :disabled="InvitationType"
                             placeholder="请输入邀请码(可选填)" />
                     </van-cell-group>
                 </van-form>
@@ -48,43 +48,53 @@
     </view>
 </template>
 
-<script setup>
-import { showToast } from 'vant';
-onLoad((pamrs) => {
+<script setup lang="ts">
+onLoad((pamrs: any) => {
     if (pamrs.code) {
         InvitationCode = pamrs.code
+        // 有邀请注册 邀请码框禁用状态打开
+        InvitationType = true
     }
 })
+//邀请码
+let InvitationCode = ref('')
+// 邀请码输入款禁用状态
+let InvitationType: any = ref(false)
 // 注册信息
 let registerInfo = reactive({
     phone: '',
     password: '',
-    invite_code: ''
+    // invite_code: ''
 })
 // 确认密码
 let confirmPassword = ref('')
 // 手机号正则
-const phoneTest = (val) => /1\d{10}/.test(val);
+const phoneTest = (val: any) => /1\d{10}/.test(val);
 // 密码验证
-const passTest = (val) => val.length >= 6;
+const passTest = (val: any) => val.length >= 6;
 // 确认密码验证
-const confirm = (val) => val == registerInfo.password;
-//邀请码
-let InvitationCode = ref('')
+const confirm = (val: any) => val == registerInfo.password;
 //密码可以看见吗
-let passwordType = ref('password')
-let passwordType1 = ref('password')
+let passwordType: any = ref('password')
+let passwordType1: any = ref('password')
 // 去注册
+const { goRegister } = userStore()
+
 const submit = async () => {
     // 判断注册信息是否有误
-    // if (phoneTest(registerInfo.phone) && passTest(registerInfo.password) && confirm(confirmPassword.value)) {
-    let params = { ...toRaw(registerInfo) }
-    console.log(params);
-    let { data, error } = await Api('/register', true).post(params).json();
-    console.log('res', data, error);
-    // } else {
-    //     showToast('请确认注册信息');
-    // }
+    if (phoneTest(registerInfo.phone) && passTest(registerInfo.password) && confirm(confirmPassword.value)) {
+        try {
+            let pamrs = {
+                ...registerInfo,
+                confirm_password: confirmPassword.value
+            }
+            await goRegister(pamrs)
+        } catch {
+            Toast('注册失败')
+        }
+    } else {
+        Toast('请确认注册信息')
+    }
 }
 </script>
 

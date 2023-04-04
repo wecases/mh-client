@@ -4,7 +4,7 @@
 		<view class="info">
 			<view class="avatar"></view>
 			<view class="right">
-				<view class="name ellipsis">18845166</view>
+				<view class="name ellipsis">{{ user.name }}</view>
 				<view class="bottom">
 					v1等级
 				</view>
@@ -71,6 +71,9 @@
 
 <script setup>
 const { vipCenterNav, myOrderNav } = storeToRefs(centerStore())
+// 用户信息
+const { user } = $(storeToRefs(userStore()))
+
 </script>
 
 <style lang="scss" scoped>

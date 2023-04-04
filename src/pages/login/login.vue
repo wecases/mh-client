@@ -37,47 +37,40 @@
 	</view>
 </template>
 
-<script setup>
-import { showToast } from 'vant';
+<script setup lang="ts">
 
 // 登录信息
 let loginInfo = reactive({
-	phone: '18812490455',
-	password: '123123',
+	phone: '',
+	password: '',
 })
 
 // 手机号正则
-const phoneTest = (val) => /1\d{10}/.test(val);
+const phoneTest: Function = (val: any) => /1\d{10}/.test(val);
 // 密码验证
-const passTest = (val) => val.length >= 6;
+const passTest: Function = (val: any) => val.length >= 6;
 //密码可以看见吗
-let passwordType = ref('password')
+let passwordType: any = ref('password')
 // 去登陆
 const { goLogin } = userStore()
 
 const submit = async () => {
 	if (phoneTest(loginInfo.phone) && passTest(loginInfo.password)) {
-		// let res = await Api('/login', true).post(loginInfo).json();
-		let res = await goLogin(loginInfo)
-		console.log(res);
-		if (!res) {
-			showFailToast('登录失败');
-		}
-		uni.showToast({
-			title: '登录成功',
-			icon: 'success',
-			duration: 1000,
-			success: function () {
-
+		try {
+			let res = await goLogin(loginInfo)
+			const data = await res;
+			if (data.code === 200) {
+				Toast("登录成功", 'none', () => {
+					uni.switchTab({ url: '/pages/index/index' })
+				})
+			} else {
+				Toast(res.massage)
 			}
-		})
-		setTimeout(() => {
-			uni.switchTab({
-				url: "/pages/index/index"   // 目标页面的路径
-			})
-		}, 1000);
+		} catch {
+			Toast('登录失败')
+		}
 	} else {
-		showToast('请确认登录信息');
+		Toast('请确认登录信息')
 	}
 }
 </script>
@@ -107,10 +100,6 @@ page {
 	}
 
 	.content {
-		border-radius: 0.88rem;
-		opacity: 1;
-		// padding: 0 0.75rem;
-
 		.loginTitle {
 			color: #333333ff;
 			font-size: 1.25rem;

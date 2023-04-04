@@ -73,16 +73,14 @@
 </template>
 
 <script setup lang="ts">
-
-const { getUserInfo, goLogin } = userStore()
+const { getUserInfo } = userStore()
 const { getHotBoxList, getNewBoxList } = boxStore()
 onShow(async () => {
 	await getNewBoxList()
 	await getHotBoxList()
-	await goLogin()
-	// await getUserInfo()
+	await getUserInfo()
 })
-const { user, userinfo } = $(storeToRefs(userStore()))
+const { user } = $(storeToRefs(userStore()))
 const { newBoxList, hotBoxList } = $(storeToRefs(boxStore()));
 console.log(user.name, 'userInfo');
 

@@ -20,7 +20,12 @@
     ]
   },
   "vueCompilerOptions": {
-    "nativeTags": ["block", "component", "template", "slot"]
+    "nativeTags": [
+      "block",
+      "component",
+      "template",
+      "slot"
+    ]
   },
   "include": [
     "src/**/*.ts",

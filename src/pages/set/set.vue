@@ -1,12 +1,14 @@
 <template>
 	<view class="set">
 		<navbar text="设置" />
-		<view class="content">
+		<view class="content" px-4>
 			<view class="user">
 				<view class="row">
 					<view class="left">头像</view>
 					<view class="right">
-						<image src="@/static/logo.png" mode=""></image>
+						<image
+							@click="Jump('/pages/changeImage/changeImage', { params: { imageUrl: '../static/logo.png' } })"
+							:src="userStore.image" mode=""></image>
 						<svg xmlns="http://www.w3.org/2000/svg" class="do97pvxlj__icon do97pvxlj__design-iconfont"
 							viewBox="0 0 1024 1024">
 							<path
@@ -30,7 +32,7 @@
 					</view>
 				</view>
 			</view>
-
+			{{ user }}
 			<view class="user">
 				<view class="row" v-for="(item, index) in row" :key="index">
 					<view class="left">{{ item.text }}</view>
@@ -47,17 +49,14 @@
 					</view>
 				</view>
 			</view>
-			<view class="logOut">退出登录</view>
+			<view class="logOut" @click="logOut">退出登录</view>
 		</view>
-
+		<dialog-box @cancel="cancel" @confirm="confirm" content="确认退出登录"></dialog-box>
 	</view>
 </template>
 
 <script setup>
-import {
-	ref,
-	reactive,
-} from "vue";
+const { user } = $(storeToRefs(userStore()))
 const row = reactive([{
 	text: "消息提示",
 	right: ""
@@ -72,11 +71,36 @@ const row = reactive([{
 	right: "1.1.0"
 }
 ])
+const { openDialog, closeDialog } = popupStore()
+// 确定退出登录弹出框
+const logOut = () => {
+	openDialog()
+}
+// 取消退出登录
+const cancel = () => {
+	closeDialog()
+}
+// 退出登录
+const confirm = () => {
+	console.log("djfskdfkj");
+	closeDialog();
+	uni.clearStorageSync();
+	uni.showToast({
+		title: '请确认注册信息',
+		icon: 'none',
+		duration: 2000,
+		success: () => {
+			setTimeout(() => {
+				Jump('/pages/login/login')
+			}, 1500);
+		}
+	});
+
+}
 </script>
 
 <style lang="scss">
 .content {
-	padding-top: 44px;
 
 	.user {
 		margin-top: 1rem;
@@ -104,6 +128,7 @@ const row = reactive([{
 				font-weight: 400;
 				display: flex;
 				align-items: center;
+
 				svg {
 					margin-left: 0.5rem;
 					width: 0.8rem;

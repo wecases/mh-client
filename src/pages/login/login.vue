@@ -8,10 +8,10 @@
 				<van-form validate-trigger="onChange">
 					<van-cell-group inset>
 						<!-- 输入手机号，调起手机号键盘 -->
-						<van-field v-model="loginInfo.phone" :rules="[{ validator: phoneTest, message: '请输入正确手机号' }]"
+						<van-field v-model="loginInfo.phone" :rules="[{ validator: phoneTest(), message: '请输入正确手机号' }]"
 							type="tel" placeholder="请输入您的手机号码" />
 						<!-- 输入密码 -->
-						<van-field v-model="loginInfo.password" :rules="[{ validator: passTest, message: '密码不少于六位' }]"
+						<van-field v-model="loginInfo.password" :rules="[{ validator: passTest(), message: '密码不少于六位' }]"
 							:type="passwordType" placeholder="请输入密码">
 							<template #right-icon>
 								<span class="solts"

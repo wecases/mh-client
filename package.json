@@ -73,7 +73,7 @@
     "pinia-plugin-persistedstate": "^3.1.0",
     "sass": "^1.60.0",
     "typescript": "^5.0.0",
-    "unocss": "^0.50.6",
+    "unocss": "^0.51.0",
     "unocss-applet": "^0.3.4",
     "unplugin-auto-import": "^0.15.2",
     "unplugin-vue-components": "^0.24.1",

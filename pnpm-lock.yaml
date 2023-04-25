@@ -67,8 +67,8 @@ devDependencies:
     specifier: 3.0.0-alpha-3080120230425001
     version: 3.0.0-alpha-3080120230425001
   '@dcloudio/vite-plugin-uni':
-    specifier: 3.0.0-alpha-3071320230417001
-    version: 3.0.0-alpha-3071320230417001(postcss@8.4.21)(vite@4.3.1)(vue@3.2.47)
+    specifier: 3.0.0-alpha-3080120230425001
+    version: 3.0.0-alpha-3080120230425001(postcss@8.4.21)(vite@4.3.1)(vue@3.2.47)
   '@iconify/tools':
     specifier: ^2.2.6
     version: 2.2.6
@@ -1491,6 +1491,7 @@ packages:
       - supports-color
       - ts-node
       - vue
+    dev: false
 
   /@dcloudio/uni-cli-shared@3.0.0-alpha-3080120230425001(postcss@8.4.21)(vue@3.2.47):
     resolution: {integrity: sha512-Ck91kB++hAV6IGFros7zNTC0KAJV951Fx70QsOm564qQQJz5tOEplQQfRD3wjwaWFXYg/K7p49wV2s8kHUAPYQ==}
@@ -1617,6 +1618,7 @@ packages:
 
   /@dcloudio/uni-i18n@3.0.0-alpha-3071320230417001:
     resolution: {integrity: sha512-4oEBFNq8Lvl7CB7eXb4UY5wCVOHN4Jpa48MO5tlgkb4kRK56dG4JkAP7tz426YhSMNi8UW9vH6j3gJyGGgy+AQ==}
+    dev: false
 
   /@dcloudio/uni-i18n@3.0.0-alpha-3080120230425001:
     resolution: {integrity: sha512-fYN/UC5s27mWO5d8/sqSxND2OgmLAHhT4VVPHucJG75TdBP2ME5WA4Vzvw/GKiSYb8HHv34407RCcXXqIAaliw==}
@@ -1854,6 +1856,7 @@ packages:
     resolution: {integrity: sha512-9LwJnkl5B6xmRfFJq62zwdJ+hmi+wPnS8w6tPKRCogiRhMKvpEfJrxMUQZgv/d8+ARGlJdRdlSSVlY+NvtTE2w==}
     dependencies:
       '@vue/shared': 3.2.47
+    dev: false
 
   /@dcloudio/uni-shared@3.0.0-alpha-3080120230425001:
     resolution: {integrity: sha512-wyZCiEK4X6wfYSds2bSWLnxgeYu0M1aXYxyQdsYPPzkj2o5sMx8gdXau9M0JKjv5rX/t6hbQVAAF/A2+2dLQFg==}
@@ -1878,8 +1881,8 @@ packages:
       - vue
     dev: false
 
-  /@dcloudio/vite-plugin-uni@3.0.0-alpha-3071320230417001(postcss@8.4.21)(vite@4.3.1)(vue@3.2.47):
-    resolution: {integrity: sha512-Tx8WLxCDJLbBZBJjfBNdJ9Jn9A64HE3G2Dp/bg0Hd5wYXTEhCGnERDeC8eusBvfZh1fkGfrkO6lt14QIogTCUA==}
+  /@dcloudio/vite-plugin-uni@3.0.0-alpha-3080120230425001(postcss@8.4.21)(vite@4.3.1)(vue@3.2.47):
+    resolution: {integrity: sha512-PxASR0CfBAw3llLbVIbJKyn85ZCpIJ/RAlOko0a5y3qPvrziMCXjjrUH5ODYdr5Tl0r1dUzzVdngVj8mWMes8Q==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -1888,8 +1891,8 @@ packages:
       '@babel/core': 7.21.3
       '@babel/plugin-syntax-import-meta': 7.10.4(@babel/core@7.21.3)
       '@babel/plugin-transform-typescript': 7.21.3(@babel/core@7.21.3)
-      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3071320230417001(postcss@8.4.21)(vue@3.2.47)
-      '@dcloudio/uni-shared': 3.0.0-alpha-3071320230417001
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3080120230425001(postcss@8.4.21)(vue@3.2.47)
+      '@dcloudio/uni-shared': 3.0.0-alpha-3080120230425001
       '@rollup/pluginutils': 4.2.1
       '@vitejs/plugin-legacy': 4.0.2(terser@5.16.8)(vite@4.3.1)
       '@vitejs/plugin-vue': 4.1.0(vite@4.3.1)(vue@3.2.47)
@@ -1906,7 +1909,7 @@ packages:
       fs-extra: 10.1.0
       hash-sum: 2.0.0
       jsonc-parser: 3.2.0
-      magic-string: 0.27.0
+      magic-string: 0.30.0
       picocolors: 1.0.0
       terser: 5.16.8
       vite: 4.3.1(sass@1.60.0)(terser@5.16.8)
@@ -4391,6 +4394,7 @@ packages:
 
   /es-module-lexer@0.9.3:
     resolution: {integrity: sha512-1HQ2M2sPtxwnvOvT1ZClHyQDiggdNjURWpY2we6aMKCQiUVxTmVs2UYPLIrD84sS+kMdUwfBSylbJPwNnBrnHQ==}
+    dev: false
 
   /es-module-lexer@1.2.1:
     resolution: {integrity: sha512-9978wrXM50Y4rTMmW5kXIC09ZdXQZqkE4mxhwkd8VbzsGkXGPgV4zWuqQJgCEzYngdo2dYDa0l8xhX4fkSwJSg==}
@@ -5707,6 +5711,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.14
+    dev: false
 
   /magic-string@0.30.0:
     resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}

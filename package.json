@@ -67,7 +67,7 @@
     "@types/qrcode": "^1.5.0",
     "@uni-helper/uni-app-types": "^0.5.3",
     "@unocss/preset-icons": "^0.51.0",
-    "@vue/tsconfig": "^0.3.0",
+    "@vue/tsconfig": "^0.4.0",
     "@vueuse/core": "^10.0.0",
     "pinia": "^2.0.33",
     "pinia-plugin-persistedstate": "^3.1.0",

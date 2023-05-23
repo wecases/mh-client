@@ -8,8 +8,8 @@ dependencies:
     specifier: 3.0.0-alpha-3080320230519001
     version: 3.0.0-alpha-3080320230519001(postcss@8.4.23)(vite@4.3.8)(vue@3.2.47)
   '@dcloudio/uni-components':
-    specifier: 3.0.0-alpha-3000020210521001
-    version: 3.0.0-alpha-3000020210521001
+    specifier: 3.0.0-alpha-3080320230523001
+    version: 3.0.0-alpha-3080320230523001
   '@dcloudio/uni-h5':
     specifier: 3.0.0-alpha-3080320230519001
     version: 3.0.0-alpha-3080320230519001(postcss@8.4.23)(vue@3.2.47)
@@ -1539,12 +1539,12 @@ packages:
       - vue
     dev: false
 
-  /@dcloudio/uni-components@3.0.0-alpha-3000020210521001:
-    resolution: {integrity: sha512-FxCzOPgOqE5V9owpogIZc0UvvfSlrzL77YVoKFWXB6BRJwAzc2bEpzA0+vUA+2V+RajWN6HrK9/czKjsArTS1A==}
-    dev: false
-
   /@dcloudio/uni-components@3.0.0-alpha-3080320230519001:
     resolution: {integrity: sha512-TMYdwwTJXPpDJnDUcZ1CVAfkEoZo8q93mFQVR/yhcRkrM8dlBwt9K8u2p3OYs4+Ug6JxE7B3RIwCQ4twY5auRg==}
+    dev: false
+
+  /@dcloudio/uni-components@3.0.0-alpha-3080320230523001:
+    resolution: {integrity: sha512-qMzyp9MdSCxBlpJPc7zZoNMKxa8sDuM1OQ9EhuxEhs+PfmEE0zZ0wis/HTg4BpBQYQ3guVKJTiLO78NEflkzJw==}
     dev: false
 
   /@dcloudio/uni-h5-vite@3.0.0-alpha-3080320230519001(postcss@8.4.23)(vue@3.2.47):

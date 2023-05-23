@@ -61,8 +61,8 @@ devDependencies:
     specifier: 3.0.0-alpha-3080320230523001
     version: 3.0.0-alpha-3080320230523001(jest-environment-node@27.5.1)(jest@27.0.4)(postcss@8.4.23)(vue@3.2.47)
   '@dcloudio/uni-cli-shared':
-    specifier: 3.0.0-alpha-3080320230519001
-    version: 3.0.0-alpha-3080320230519001(postcss@8.4.23)(vue@3.2.47)
+    specifier: 3.0.0-alpha-3080320230523001
+    version: 3.0.0-alpha-3080320230523001(postcss@8.4.23)(vue@3.2.47)
   '@dcloudio/uni-stacktracey':
     specifier: 3.0.0-alpha-3080320230519001
     version: 3.0.0-alpha-3080320230519001
@@ -125,13 +125,6 @@ devDependencies:
     version: 1.2.0(typescript@5.0.2)
 
 packages:
-
-  /@ampproject/remapping@2.2.0:
-    resolution: {integrity: sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      '@jridgewell/gen-mapping': 0.1.1
-      '@jridgewell/trace-mapping': 0.3.17
 
   /@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
@@ -1433,7 +1426,7 @@ packages:
     resolution: {integrity: sha512-61ZkMP6CRmhs1qqQvgFYHAMeFmLff5B07qWqCGm0r0tRHHsx+xRvPJJ71KvlhMwF+Csqw/1tuwd5aXW8uF4gFg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
-      '@ampproject/remapping': 2.2.0
+      '@ampproject/remapping': 2.2.1
       '@babel/core': 7.21.3
       '@babel/parser': 7.21.3
       '@babel/types': 7.21.3
@@ -2815,13 +2808,6 @@ packages:
       core-js: 3.29.1
       regenerator-runtime: 0.13.11
     dev: false
-
-  /@jridgewell/gen-mapping@0.1.1:
-    resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      '@jridgewell/set-array': 1.1.2
-      '@jridgewell/sourcemap-codec': 1.4.14
 
   /@jridgewell/gen-mapping@0.3.2:
     resolution: {integrity: sha512-mh65xKQAzI6iBcFzwv28KVWSmCkdRBWoOh+bYQGW3+6OZvbbN3TqMGo5hqYxQniRcH9F2VZIoJCm4pa3BPDK/A==}

@@ -71,8 +71,8 @@ devDependencies:
     specifier: 3.0.0-alpha-3080720230627002
     version: 3.0.0-alpha-3080720230627002
   '@dcloudio/vite-plugin-uni':
-    specifier: 3.0.0-alpha-3080620230620001
-    version: 3.0.0-alpha-3080620230620001(postcss@8.4.23)(vite@4.3.9)(vue@3.2.47)
+    specifier: 3.0.0-alpha-3080720230627002
+    version: 3.0.0-alpha-3080720230627002(postcss@8.4.23)(vite@4.3.9)(vue@3.2.47)
   '@iconify/tools':
     specifier: ^3.0.0
     version: 3.0.0
@@ -1502,6 +1502,7 @@ packages:
       - supports-color
       - ts-node
       - vue
+    dev: false
 
   /@dcloudio/uni-cli-shared@3.0.0-alpha-3080720230627002(postcss@8.4.23)(vue@3.2.47):
     resolution: {integrity: sha512-3Ll9N836QbpiQ5Cj+fGUhUwRMxHadKcAd5sKsWg0MGHILse7MhLob63PapR6sj/aebHeJ9yh0aC7eq5Yl1gj9w==}
@@ -1640,6 +1641,7 @@ packages:
 
   /@dcloudio/uni-i18n@3.0.0-alpha-3080620230620001:
     resolution: {integrity: sha512-fda+TLgVXYn3GC01gzenOBl4aDOHrxFgO3RQB8i8aqKWT2nUiyjVfpvAEBoVOggbKEdX23d7lbcwyu0xN97z6g==}
+    dev: false
 
   /@dcloudio/uni-i18n@3.0.0-alpha-3080720230627002:
     resolution: {integrity: sha512-Qw4dwP9316bcBnmXpp1uZtE0Gj+/YpFsSb+ueddwBftkQX2DahnfSNvmsqgQiOxMeFCp6VgTKEuhDSQub9YTVg==}
@@ -1877,6 +1879,7 @@ packages:
     resolution: {integrity: sha512-VJmv97K9DUMlVOfMoWx9tHo8H1YJKrwDnPYVhJT09xGZuxqRhXp+ZyeavNkRTRnapqg6l+s12MWudRMJHjFZRA==}
     dependencies:
       '@vue/shared': 3.2.47
+    dev: false
 
   /@dcloudio/uni-shared@3.0.0-alpha-3080720230627002:
     resolution: {integrity: sha512-GLkQylIj522iJN9OxpWe2TNPm+2Md6O2C9rPDNupI1QqxLoUWgxzqC7IYVv3e1P0wBHoNxoRBTwJfprtIcHAgg==}
@@ -1901,8 +1904,8 @@ packages:
       - vue
     dev: false
 
-  /@dcloudio/vite-plugin-uni@3.0.0-alpha-3080620230620001(postcss@8.4.23)(vite@4.3.9)(vue@3.2.47):
-    resolution: {integrity: sha512-dj8dWVfmnc0Ifsqybtx3IwnHLTjD7EQ92WlPGu2CeB10Mc9+6SbhWobmCJnKQSfC2pbl+OQdrcz+UkXO3TIDFQ==}
+  /@dcloudio/vite-plugin-uni@3.0.0-alpha-3080720230627002(postcss@8.4.23)(vite@4.3.9)(vue@3.2.47):
+    resolution: {integrity: sha512-xUbgfGuQ4XD8petK9KWFh64pkbR5EvcdZlrR670hYy8GAKaqAYu6tsB0uEfDHMEWmAjtERc9kJcUj8L/WT8pqQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -1911,8 +1914,8 @@ packages:
       '@babel/core': 7.21.3
       '@babel/plugin-syntax-import-meta': 7.10.4(@babel/core@7.21.3)
       '@babel/plugin-transform-typescript': 7.21.3(@babel/core@7.21.3)
-      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3080620230620001(postcss@8.4.23)(vue@3.2.47)
-      '@dcloudio/uni-shared': 3.0.0-alpha-3080620230620001
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3080720230627002(postcss@8.4.23)(vue@3.2.47)
+      '@dcloudio/uni-shared': 3.0.0-alpha-3080720230627002
       '@rollup/pluginutils': 4.2.1
       '@vitejs/plugin-legacy': 4.0.3(terser@5.16.8)(vite@4.3.9)
       '@vitejs/plugin-vue': 4.2.1(vite@4.3.9)(vue@3.2.47)

@@ -21,8 +21,8 @@ dependencies:
     specifier: 3.0.0-alpha-3090620231030001
     version: 3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47)
   '@dcloudio/uni-mp-baidu':
-    specifier: 3.0.0-alpha-3090420231023001
-    version: 3.0.0-alpha-3090420231023001(postcss@8.4.28)(vue@3.2.47)
+    specifier: 3.0.0-alpha-3090620231030001
+    version: 3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47)
   '@dcloudio/uni-mp-jd':
     specifier: 3.0.0-alpha-3090420231023001
     version: 3.0.0-alpha-3090420231023001(postcss@8.4.28)(vue@3.2.47)
@@ -1542,7 +1542,7 @@ packages:
       fs-extra: 10.1.0
       hash-sum: 2.0.0
       jsonc-parser: 3.2.0
-      magic-string: 0.30.2
+      magic-string: 0.30.5
       merge: 2.1.1
       mime: 3.0.0
       module-alias: 2.2.2
@@ -1776,15 +1776,15 @@ packages:
       - vue
     dev: false
 
-  /@dcloudio/uni-mp-baidu@3.0.0-alpha-3090420231023001(postcss@8.4.28)(vue@3.2.47):
-    resolution: {integrity: sha512-bYaY0epz8e44/gq3koh66L7z8YzaLDfOjV/8N7PKMIcE66HKVwemDm/keQjDmyUripJopnfLs6LJURU+jQfZRg==}
+  /@dcloudio/uni-mp-baidu@3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47):
+    resolution: {integrity: sha512-7HfQGryxSv65i2GFq3xCdYuK/vOC3UqkpkOme/6MGZXcI02IrCUl8VcrYSN5/6hyvTNhpYos/GLO0jc/9g/cKQ==}
     dependencies:
-      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3090420231023001(postcss@8.4.28)(vue@3.2.47)
-      '@dcloudio/uni-mp-compiler': 3.0.0-alpha-3090420231023001(postcss@8.4.28)(vue@3.2.47)
-      '@dcloudio/uni-mp-vite': 3.0.0-alpha-3090420231023001(postcss@8.4.28)(vue@3.2.47)
-      '@dcloudio/uni-mp-vue': 3.0.0-alpha-3090420231023001
-      '@dcloudio/uni-mp-weixin': 3.0.0-alpha-3090420231023001(postcss@8.4.28)(vue@3.2.47)
-      '@dcloudio/uni-shared': 3.0.0-alpha-3090420231023001
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47)
+      '@dcloudio/uni-mp-compiler': 3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47)
+      '@dcloudio/uni-mp-vite': 3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47)
+      '@dcloudio/uni-mp-vue': 3.0.0-alpha-3090620231030001
+      '@dcloudio/uni-mp-weixin': 3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47)
+      '@dcloudio/uni-shared': 3.0.0-alpha-3090620231030001
       '@vue/compiler-core': 3.2.47
       '@vue/shared': 3.2.47
       jimp: 0.10.3
@@ -1983,6 +1983,28 @@ packages:
       '@dcloudio/uni-mp-vite': 3.0.0-alpha-3090420231023001(postcss@8.4.28)(vue@3.2.47)
       '@dcloudio/uni-mp-vue': 3.0.0-alpha-3090420231023001
       '@dcloudio/uni-shared': 3.0.0-alpha-3090420231023001
+      '@vue/shared': 3.2.47
+      jimp: 0.10.3
+      licia: 1.38.0
+      qrcode-reader: 1.0.4
+      qrcode-terminal: 0.12.0
+      ws: 8.13.0
+    transitivePeerDependencies:
+      - bufferutil
+      - postcss
+      - supports-color
+      - ts-node
+      - utf-8-validate
+      - vue
+    dev: false
+
+  /@dcloudio/uni-mp-weixin@3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47):
+    resolution: {integrity: sha512-dUjqN31OvyQKNqqbts38ZpQPdNCcylaXXUHOenIBqe9THMavoVEVTNeW5q2SxqQhTbcU00Aad4/FjQhS5DaNLw==}
+    dependencies:
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47)
+      '@dcloudio/uni-mp-vite': 3.0.0-alpha-3090620231030001(postcss@8.4.28)(vue@3.2.47)
+      '@dcloudio/uni-mp-vue': 3.0.0-alpha-3090620231030001
+      '@dcloudio/uni-shared': 3.0.0-alpha-3090620231030001
       '@vue/shared': 3.2.47
       jimp: 0.10.3
       licia: 1.38.0
@@ -3727,7 +3749,7 @@ packages:
       '@babel/preset-env': 7.20.2(@babel/core@7.21.3)
       browserslist: 4.21.5
       core-js: 3.29.1
-      magic-string: 0.30.2
+      magic-string: 0.30.5
       regenerator-runtime: 0.13.11
       systemjs: 6.14.1
       terser: 5.16.8
@@ -6168,12 +6190,6 @@ packages:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /magic-string@0.30.2:
-    resolution: {integrity: sha512-lNZdu7pewtq/ZvWUp9Wpf/x7WzMTsR26TWV03BRZrXFsv+BI6dy8RAiKgm1uM/kyR0rCfUcqvOlXKG66KhIGug==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-
   /magic-string@0.30.5:
     resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
     engines: {node: '>=12'}
@@ -7457,7 +7473,7 @@ packages:
       escape-string-regexp: 5.0.0
       fast-glob: 3.3.1
       local-pkg: 0.4.3
-      magic-string: 0.30.2
+      magic-string: 0.30.5
       mlly: 1.2.0
       pathe: 1.1.0
       pkg-types: 1.0.2

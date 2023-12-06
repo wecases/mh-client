@@ -18,8 +18,8 @@ dependencies:
     specifier: 3.0.0-alpha-3090920231206001
     version: 3.0.0-alpha-3090920231206001(postcss@8.4.28)(vue@3.2.47)
   '@dcloudio/uni-mp-alipay':
-    specifier: 3.0.0-alpha-3090920231203001
-    version: 3.0.0-alpha-3090920231203001(postcss@8.4.28)(vue@3.2.47)
+    specifier: 3.0.0-alpha-3090920231206001
+    version: 3.0.0-alpha-3090920231206001(postcss@8.4.28)(vue@3.2.47)
   '@dcloudio/uni-mp-baidu':
     specifier: 3.0.0-alpha-3090920231203001
     version: 3.0.0-alpha-3090920231203001(postcss@8.4.28)(vue@3.2.47)
@@ -1815,13 +1815,13 @@ packages:
     resolution: {integrity: sha512-Ufg16RxO10a1vcxkY/7XU1cwH/rBuKKmC1/ZFljr7R6yoBwO+rx+SE1IEn/l5fub4S6BT+v3C3C+zcGpqmAJmg==}
     dev: false
 
-  /@dcloudio/uni-mp-alipay@3.0.0-alpha-3090920231203001(postcss@8.4.28)(vue@3.2.47):
-    resolution: {integrity: sha512-T8HjiGmF/3uElg8oFAosWDHKorE4h9HzLAJan4KyRKOJK4QKV+AKBhCudFS9/P2U0ZCUEdt6q7+OErm6v2cXFA==}
+  /@dcloudio/uni-mp-alipay@3.0.0-alpha-3090920231206001(postcss@8.4.28)(vue@3.2.47):
+    resolution: {integrity: sha512-7rUlkc9pwgdO+07CG2S5ZHJ+VyLYEgCymVY/ot6o0ZwecV8xWe1cawWBi1CQwGOw0XUcsagwpRamcICOsMiRzA==}
     dependencies:
-      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3090920231203001(postcss@8.4.28)(vue@3.2.47)
-      '@dcloudio/uni-mp-vite': 3.0.0-alpha-3090920231203001(postcss@8.4.28)(vue@3.2.47)
-      '@dcloudio/uni-mp-vue': 3.0.0-alpha-3090920231203001
-      '@dcloudio/uni-shared': 3.0.0-alpha-3090920231203001
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3090920231206001(postcss@8.4.28)(vue@3.2.47)
+      '@dcloudio/uni-mp-vite': 3.0.0-alpha-3090920231206001(postcss@8.4.28)(vue@3.2.47)
+      '@dcloudio/uni-mp-vue': 3.0.0-alpha-3090920231206001
+      '@dcloudio/uni-shared': 3.0.0-alpha-3090920231206001
       '@vue/compiler-core': 3.2.47
       '@vue/shared': 3.2.47
     transitivePeerDependencies:

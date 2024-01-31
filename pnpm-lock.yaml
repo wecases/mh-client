@@ -33,8 +33,8 @@ dependencies:
     specifier: 3.0.0-alpha-4000020240117001
     version: 3.0.0-alpha-4000020240117001(postcss@8.4.32)(vue@3.2.47)
   '@dcloudio/uni-mp-qq':
-    specifier: 3.0.0-alpha-3090420231023001
-    version: 3.0.0-alpha-3090420231023001(postcss@8.4.32)(vue@3.2.47)
+    specifier: 3.0.0-alpha-4000120240201001
+    version: 3.0.0-alpha-4000120240201001(@vueuse/core@10.0.0)(postcss@8.4.32)(vue@3.2.47)
   '@dcloudio/uni-mp-toutiao':
     specifier: 3.0.0-alpha-3090420231023001
     version: 3.0.0-alpha-3090420231023001(postcss@8.4.32)(vue@3.2.47)
@@ -2082,17 +2082,20 @@ packages:
       - vue
     dev: false
 
-  /@dcloudio/uni-mp-qq@3.0.0-alpha-3090420231023001(postcss@8.4.32)(vue@3.2.47):
-    resolution: {integrity: sha512-yLxO5fRdFu1c6zcEe83Bxx0VbMl5WMEBbrdXu+aA5VXL3lU17d8AmbwwQh6R+4wSkqSCBOv700A6sDyWRIRPrg==}
+  /@dcloudio/uni-mp-qq@3.0.0-alpha-4000120240201001(@vueuse/core@10.0.0)(postcss@8.4.32)(vue@3.2.47):
+    resolution: {integrity: sha512-6a//yFyM4yVPqXOTwvV1d2Bl5mM5aw5JuxRv1urbFOboXrEM9MQPXhksWV0h+nDo9XsqyZiqdjC2tmT1P3UPAw==}
     dependencies:
-      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3090420231023001(postcss@8.4.32)(vue@3.2.47)
-      '@dcloudio/uni-mp-vite': 3.0.0-alpha-3090420231023001(postcss@8.4.32)(vue@3.2.47)
-      '@dcloudio/uni-mp-vue': 3.0.0-alpha-3090420231023001
-      '@dcloudio/uni-shared': 3.0.0-alpha-3090420231023001
-      '@vue/shared': 3.2.47
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-4000120240201001(@vueuse/core@10.0.0)(postcss@8.4.32)(vue@3.2.47)
+      '@dcloudio/uni-mp-vite': 3.0.0-alpha-4000120240201001(@vueuse/core@10.0.0)(postcss@8.4.32)(vue@3.2.47)
+      '@dcloudio/uni-mp-vue': 3.0.0-alpha-4000120240201001
+      '@dcloudio/uni-shared': 3.0.0-alpha-4000120240201001
+      '@vue/shared': 3.3.11
       fs-extra: 10.1.0
     transitivePeerDependencies:
+      - '@nuxt/kit'
+      - '@vueuse/core'
       - postcss
+      - rollup
       - supports-color
       - ts-node
       - vue
@@ -4406,7 +4409,6 @@ packages:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: false
 
   /acorn@8.8.2:
     resolution: {integrity: sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==}
@@ -6407,7 +6409,7 @@ packages:
         optional: true
     dependencies:
       abab: 2.0.6
-      acorn: 8.10.0
+      acorn: 8.11.3
       acorn-globals: 6.0.0
       cssom: 0.4.4
       cssstyle: 2.3.0

@@ -18,8 +18,8 @@ dependencies:
     specifier: 3.0.0-alpha-4000020240127001
     version: 3.0.0-alpha-4000020240127001(postcss@8.4.35)(vue@3.2.47)
   '@dcloudio/uni-mp-alipay':
-    specifier: 3.0.0-alpha-4000320240308002
-    version: 3.0.0-alpha-4000320240308002(@vueuse/core@10.0.0)(postcss@8.4.35)(vue@3.2.47)
+    specifier: 3.0.0-alpha-4000320240309002
+    version: 3.0.0-alpha-4000320240309002(@vueuse/core@10.0.0)(postcss@8.4.35)(vue@3.2.47)
   '@dcloudio/uni-mp-baidu':
     specifier: 3.0.0-alpha-4000320240308002
     version: 3.0.0-alpha-4000320240308002(@vueuse/core@10.0.0)(postcss@8.4.35)(vue@3.2.47)
@@ -2176,13 +2176,13 @@ packages:
     resolution: {integrity: sha512-O3w1GwZBfVoTWAT6hWkeh3qkH6qXL++8O4yETW9q1DnWj6/slJvC1uOxJeyyDi6AECj27Zqxv7s8l720rFG9Ig==}
     dev: false
 
-  /@dcloudio/uni-mp-alipay@3.0.0-alpha-4000320240308002(@vueuse/core@10.0.0)(postcss@8.4.35)(vue@3.2.47):
-    resolution: {integrity: sha512-ldKW8Eld20tpmjDlmD8x2snLhFO/4KrBAJs+7XYr2Yz7xXGwaZexXeP+JC+EwiSn5QMgHrJkcq/Xug1VJZwF2w==}
+  /@dcloudio/uni-mp-alipay@3.0.0-alpha-4000320240309002(@vueuse/core@10.0.0)(postcss@8.4.35)(vue@3.2.47):
+    resolution: {integrity: sha512-Vjld457QDxiJL+lgFLVM9R+4GKBP8zNdt6Eg+38dF4ZP4cLOJrkzt9XgBHOMthkajm07iV0gEw3UuIInUcDgOg==}
     dependencies:
-      '@dcloudio/uni-cli-shared': 3.0.0-alpha-4000320240308002(@vueuse/core@10.0.0)(postcss@8.4.35)(vue@3.2.47)
-      '@dcloudio/uni-mp-vite': 3.0.0-alpha-4000320240308002(@vueuse/core@10.0.0)(postcss@8.4.35)(vue@3.2.47)
-      '@dcloudio/uni-mp-vue': 3.0.0-alpha-4000320240308002
-      '@dcloudio/uni-shared': 3.0.0-alpha-4000320240308002
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-4000320240309002(@vueuse/core@10.0.0)(postcss@8.4.35)(vue@3.2.47)
+      '@dcloudio/uni-mp-vite': 3.0.0-alpha-4000320240309002(@vueuse/core@10.0.0)(postcss@8.4.35)(vue@3.2.47)
+      '@dcloudio/uni-mp-vue': 3.0.0-alpha-4000320240309002
+      '@dcloudio/uni-shared': 3.0.0-alpha-4000320240309002
       '@vue/compiler-core': 3.3.11
       '@vue/shared': 3.3.11
     transitivePeerDependencies:

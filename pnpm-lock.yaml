@@ -18,8 +18,8 @@ dependencies:
     specifier: 3.0.0-alpha-4000020240127001
     version: 3.0.0-alpha-4000020240127001(postcss@8.4.35)(vue@3.2.47)
   '@dcloudio/uni-mp-alipay':
-    specifier: 3.0.0-alpha-4000420240315001
-    version: 3.0.0-alpha-4000420240315001(@vueuse/core@10.9.0)(postcss@8.4.35)(vue@3.2.47)
+    specifier: 3.0.0-alpha-4000620240320001
+    version: 3.0.0-alpha-4000620240320001(@vueuse/core@10.9.0)(postcss@8.4.35)(vue@3.2.47)
   '@dcloudio/uni-mp-baidu':
     specifier: 3.0.0-alpha-4000420240315001
     version: 3.0.0-alpha-4000420240315001(@vueuse/core@10.9.0)(postcss@8.4.35)(vue@3.2.47)
@@ -2172,15 +2172,15 @@ packages:
     resolution: {integrity: sha512-2rrkKlVRbiTujlkZUBVhHBf1g656YvgrEu0fA4EKjvKYJWzCqEwiG6uYRz9tOYS+uBVjUXUMyvj5IT4px9r9oQ==}
     dev: false
 
-  /@dcloudio/uni-mp-alipay@3.0.0-alpha-4000420240315001(@vueuse/core@10.9.0)(postcss@8.4.35)(vue@3.2.47):
-    resolution: {integrity: sha512-wT0QZV+5t7HF8Fc5I9nLYbVYwBldtuxTQrYJcjWDlamIMI87w1ePe8rC7E9hFZBB77o+gWaalqFqWMAQKtsAVQ==}
+  /@dcloudio/uni-mp-alipay@3.0.0-alpha-4000620240320001(@vueuse/core@10.9.0)(postcss@8.4.35)(vue@3.2.47):
+    resolution: {integrity: sha512-EV6ZsvIJ+n3eTlUfVrmyv3ubo0xOG3A8LDSq6pCAQMw/f4vlW48+VGiPPpQY1iE1StrPkh9ElpsQcp65DNAYdw==}
     dependencies:
-      '@dcloudio/uni-cli-shared': 3.0.0-alpha-4000420240315001(@vueuse/core@10.9.0)(postcss@8.4.35)(vue@3.2.47)
-      '@dcloudio/uni-mp-vite': 3.0.0-alpha-4000420240315001(@vueuse/core@10.9.0)(postcss@8.4.35)(vue@3.2.47)
-      '@dcloudio/uni-mp-vue': 3.0.0-alpha-4000420240315001
-      '@dcloudio/uni-shared': 3.0.0-alpha-4000420240315001
-      '@vue/compiler-core': 3.3.11
-      '@vue/shared': 3.3.11
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-4000620240320001(@vueuse/core@10.9.0)(postcss@8.4.35)(vue@3.2.47)
+      '@dcloudio/uni-mp-vite': 3.0.0-alpha-4000620240320001(@vueuse/core@10.9.0)(postcss@8.4.35)(vue@3.2.47)
+      '@dcloudio/uni-mp-vue': 3.0.0-alpha-4000620240320001
+      '@dcloudio/uni-shared': 3.0.0-alpha-4000620240320001
+      '@vue/compiler-core': 3.4.21
+      '@vue/shared': 3.4.21
     transitivePeerDependencies:
       - '@nuxt/kit'
       - '@vueuse/core'
